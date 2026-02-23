@@ -10,6 +10,8 @@ from .models.schemas import (
 from .services.hybrid_generator import HybridMusicGenerator
 from .services.midi_processor import MidiProcessor
 from .config import settings
+from .database import engine, Base
+from .routers import auth
 import logging
 
 # Configure logging
@@ -29,11 +31,14 @@ app = FastAPI(
 # CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # Configure for production
+    allow_origins=settings.CORS_ORIGINS,
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include routers
+app.include_router(auth.router)
 
 # Global instances
 generator: HybridMusicGenerator = None
@@ -44,10 +49,16 @@ midi_processor: MidiProcessor = None
 async def startup_event():
     """Initialize services on startup"""
     global generator, midi_processor
-    
+
     logger.info("Starting up AI Arpeggiator API...")
-    
+
     try:
+        # Create database tables
+        logger.info("Creating database tables...")
+        Base.metadata.create_all(bind=engine)
+        logger.info("Database tables created successfully")
+
+        # Initialize services
         midi_processor = MidiProcessor()
         generator = HybridMusicGenerator()
         logger.info("All services initialized successfully")
@@ -241,6 +252,6 @@ if __name__ == "__main__":
     uvicorn.run(
         "app.main:app",
         host="0.0.0.0",
-        port=8000,
+        port=8006,
         reload=settings.DEBUG
     )

@@ -1,0 +1,75 @@
+.founder-section {
+  padding: 100px 0;
+  opacity: 0;
+  animation: fadeInUp 1s ease 1s forwards;
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.founder-card {
+  background: var(--surface-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--surface-border);
+  border-radius: var(--border-radius-lg);
+  padding: 40px;
+  display: flex;
+  gap: 24px;
+  align-items: center;
+}
+
+.founder-image {
+  width: 100px;
+  height: 100px;
+  background: linear-gradient(135deg, var(--primary-orange) 0%, var(--primary-orange-light) 100%);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.founder-info h3 {
+  font-family: var(--font-display);
+  font-size: 24px;
+  font-weight: 800;
+  margin-bottom: 4px;
+}
+
+.founder-info .role {
+  color: var(--text-tertiary);
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.founder-info .badge {
+  background: rgba(255, 107, 0, 0.2);
+  color: var(--primary-orange);
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  display: inline-block;
+}
+
+.founder-content h2 {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 48px);
+  font-weight: 900;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+  line-height: 1.2;
+}
+
+.founder-content p {
+  color: var(--text-secondary);
+  font-size: 16px;
+  line-height: 1.7;
+}
+
+@media (max-width: 1024px) {
+  .founder-grid {
+    grid-template-columns: 1fr;
+  }
+}

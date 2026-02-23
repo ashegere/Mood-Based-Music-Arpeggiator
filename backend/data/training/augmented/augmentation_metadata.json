@@ -1,0 +1,6146 @@
+[
+  {
+    "file": "mid-12_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-12_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Adim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-13_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Abmin7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-11_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BbMaj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Asus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Absus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EMaj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dsus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "mid-14_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dbmin7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Dbsus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Gdim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_F#Maj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Emin7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Emin6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Abdim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_F#sus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bmin6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bmin7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Ebmin6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_F#min7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DbMaj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_BMaj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Csus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bbsus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_GMaj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Fdim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Fsus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Bbmin7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AbMaj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Gmin7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Dbdim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Gmin6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_DMaj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Esus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Cdim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Ebsus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_F#min6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dmin6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Dmin7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Ebmin7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Edim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Amin7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bbdim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Amin6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_AMaj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Bbmin6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Bdim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Abmin6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_FMaj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Gsus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_F#dim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ebdim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Fmin6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Fmin7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P01_4-4_Cmin7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P06_4-4_Ddim_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_EbMaj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Cmin6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P04_4-4_CMaj7_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P02_4-4_Bsus2_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_melancholic_v0.mid",
+    "mood": "melancholic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_melancholic_v1.mid",
+    "mood": "melancholic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_melancholic_v2.mid",
+    "mood": "melancholic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_melancholic_v3.mid",
+    "mood": "melancholic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_dreamy_v0.mid",
+    "mood": "dreamy",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_dreamy_v1.mid",
+    "mood": "dreamy",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_dreamy_v2.mid",
+    "mood": "dreamy",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_dreamy_v3.mid",
+    "mood": "dreamy",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_energetic_v0.mid",
+    "mood": "energetic",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_energetic_v1.mid",
+    "mood": "energetic",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_energetic_v2.mid",
+    "mood": "energetic",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_energetic_v3.mid",
+    "mood": "energetic",
+    "variant": 3,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_tense_v0.mid",
+    "mood": "tense",
+    "variant": 0,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_tense_v1.mid",
+    "mood": "tense",
+    "variant": 1,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_tense_v2.mid",
+    "mood": "tense",
+    "variant": 2,
+    "intensity": 1.0
+  },
+  {
+    "file": "SA_P03_4-4_Dbmin6_V1_tense_v3.mid",
+    "mood": "tense",
+    "variant": 3,
+    "intensity": 1.0
+  }
+]

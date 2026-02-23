@@ -1,0 +1,9 @@
+node_modules/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+.DS_Store
+.env
+.vite/
+backend/checkpoints/checkpoint_epoch_*.pt

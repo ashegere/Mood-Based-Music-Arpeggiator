@@ -1,0 +1,4619 @@
+{
+  "generated_at": "2026-02-14T19:35:12.720389",
+  "midi_directory": "/Users/abel/Documents/Music-Arpeggiator/backend/data/training/augmented",
+  "metadata_file": "/Users/abel/Documents/Music-Arpeggiator/backend/data/training/arpeggio_mood_data_updated.json",
+  "summary": {
+    "total_files_in_metadata": 305,
+    "total_files_found": 305,
+    "total_files_missing": 0,
+    "valid_files_count": 305,
+    "invalid_files_count": 0,
+    "validation_rate": 100.0
+  },
+  "statistics": {
+    "average_note_count": 28.56,
+    "average_duration": 5.95,
+    "average_instrument_count": 1.0,
+    "note_count_range": [
+      9,
+      64
+    ],
+    "duration_range": [
+      1.598,
+      7.995
+    ],
+    "pitch_range": [
+      20,
+      94
+    ]
+  },
+  "mood_distribution": {
+    "energetic": 78,
+    "tense": 60,
+    "melancholic": 48,
+    "dreamy": 48,
+    "joyful": 32,
+    "dark": 24,
+    "uplifting": 9,
+    "intense": 2,
+    "flowing": 1,
+    "epic": 1,
+    "ominous": 1,
+    "neutral": 1
+  },
+  "error_distribution": {},
+  "valid_files": [
+    {
+      "filename": "44_S0-U1-U1-U1-D3-U1-U1-U1_12_1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "uplifting",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        67
+      ]
+    },
+    {
+      "filename": "44_S0-U1-U1-U1-D3-U1-U1-U1_12_2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "uplifting",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        65
+      ]
+    },
+    {
+      "filename": "44_S0-U1-U1-U1-D3-U1-U1-U1_12_3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "uplifting",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_S0-U1-U1-U1-D3-U1-U1-U1_12_4.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "uplifting",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        65
+      ]
+    },
+    {
+      "filename": "44_S0-U1-U1-U1-D3-U1-U1-U1_12_5.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "uplifting",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_S0-U1-U1-U1-D3-U1-U1-U1_12_6.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "uplifting",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_S0-U1-U1-U1-D3-U1-U1-U1_12_7.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "uplifting",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        52,
+        67
+      ]
+    },
+    {
+      "filename": "44_S0-U1-U1-U1-D3-U1-U1-U1_12_8.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "uplifting",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_S0-U1-U1-U1-D3-U1-U1-U1_12_10.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "uplifting",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_4.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        65
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_5.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        80
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_6.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        80
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_7.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        72
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_8.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        80
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_9.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        72
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_10.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_11.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        72
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_12.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        74
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_13.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_14.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        72
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_15.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_16.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_17.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        72
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_18.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        72
+      ]
+    },
+    {
+      "filename": "44_S0-U2-U2-U2-D3-U2-U2-U2_12_19.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        72
+      ]
+    },
+    {
+      "filename": "44_U2-D1-D1-D1-U3-D1-D1-D1_12_1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_U2-D1-D1-D1-U3-D1-D1-D1_12_2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_U2-D1-D1-D1-U3-D1-D1-D1_12_3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        68
+      ]
+    },
+    {
+      "filename": "44_U2-D1-D1-D1-U3-D1-D1-D1_12_4.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_U2-D1-D1-D1-U3-D1-D1-D1_12_5.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        68
+      ]
+    },
+    {
+      "filename": "44_U2-D1-D1-D1-U3-D1-D1-D1_12_6.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        68
+      ]
+    },
+    {
+      "filename": "44_U2-D1-D1-D1-U3-D1-D1-D1_12_7.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        68
+      ]
+    },
+    {
+      "filename": "44_U2-D1-D1-D1-U3-D1-D1-D1_12_8.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (12) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dark",
+      "note_count": 12,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_20.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        43,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_21.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        43,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_22.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        43,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_23.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        50,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_24.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        50,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_25.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        43,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_26.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_28.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        43,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_29.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_30.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        50,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_31.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        50,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_32.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_33.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_34.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        50,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_35.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        43,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_36.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_37.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_38.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        50,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_39.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_40.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        43,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_41.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_42.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        43,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_43.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_44.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        43,
+        67
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_45.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        43,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_46.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        43,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_47.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        50,
+        68
+      ]
+    },
+    {
+      "filename": "44_U3-D2-D2-D2-U3-D2-D2-D2_16_48.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_22.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        67
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_23.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        67
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_24.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        62
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_25.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        67
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_26.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        67
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_27.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_28.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_29.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_30.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_31.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_32.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_33.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_34.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_35.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_36.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_37.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_38.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_39.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_40.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_41.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_42.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_43.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_44.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_45.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_46.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_47.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_48.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_49.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "233_S0-U1-D1-U1-U1-D2-U1-U1_20_50.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        68
+      ]
+    },
+    {
+      "filename": "332_U2-D1-D1-U2-D1-D1-U2-D1_0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 32,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        67
+      ]
+    },
+    {
+      "filename": "332_U2-D1-D1-U2-D1-D1-U2-D1_20_3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        65
+      ]
+    },
+    {
+      "filename": "332_U2-D1-D1-U2-D1-D1-U2-D1_20_4.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        65
+      ]
+    },
+    {
+      "filename": "332_U2-D1-D1-U2-D1-D1-U2-D1_20_5.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        59,
+        65
+      ]
+    },
+    {
+      "filename": "332_U2-D1-D1-U2-D1-D1-U2-D1_20_6.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        65
+      ]
+    },
+    {
+      "filename": "332_U2-D1-D1-U2-D1-D1-U2-D1_20_7.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        65
+      ]
+    },
+    {
+      "filename": "332_U2-D1-D1-U2-D1-D1-U2-D1_20_8.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        65
+      ]
+    },
+    {
+      "filename": "332_U2-D1-D1-U2-D1-D1-U2-D1_20_9.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        59,
+        65
+      ]
+    },
+    {
+      "filename": "332_U2-D1-D1-U2-D1-D1-U2-D1_20_10.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        59,
+        65
+      ]
+    },
+    {
+      "filename": "332_U2-D1-D1-U2-D1-D1-U2-D1_20_11.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        65
+      ]
+    },
+    {
+      "filename": "332_U2-D1-D1-U2-D1-D1-U2-D1_20_12.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 7.995,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        65
+      ]
+    },
+    {
+      "filename": "mid-1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "flowing",
+      "note_count": 64,
+      "duration": 7.274,
+      "instrument_count": 1,
+      "pitch_range": [
+        60,
+        72
+      ]
+    },
+    {
+      "filename": "mid-2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "intense",
+      "note_count": 21,
+      "duration": 3.321,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "intense",
+      "note_count": 21,
+      "duration": 3.321,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        46
+      ]
+    },
+    {
+      "filename": "mid-3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 40,
+      "duration": 7.385,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        54
+      ]
+    },
+    {
+      "filename": "mid-4.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 64,
+      "duration": 6.857,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        70
+      ]
+    },
+    {
+      "filename": "mid-5.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 64,
+      "duration": 6.857,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        63
+      ]
+    },
+    {
+      "filename": "mid-5-2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "joyful",
+      "note_count": 20,
+      "duration": 6.857,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        59
+      ]
+    },
+    {
+      "filename": "mid-6.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "epic",
+      "note_count": 9,
+      "duration": 1.62,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        59
+      ]
+    },
+    {
+      "filename": "mid-6_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "melancholic",
+      "note_count": 9,
+      "duration": 1.625,
+      "instrument_count": 1,
+      "pitch_range": [
+        30,
+        49
+      ]
+    },
+    {
+      "filename": "mid-6_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "melancholic",
+      "note_count": 9,
+      "duration": 1.63,
+      "instrument_count": 1,
+      "pitch_range": [
+        30,
+        47
+      ]
+    },
+    {
+      "filename": "mid-6_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "melancholic",
+      "note_count": 9,
+      "duration": 1.627,
+      "instrument_count": 1,
+      "pitch_range": [
+        30,
+        54
+      ]
+    },
+    {
+      "filename": "mid-6_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "melancholic",
+      "note_count": 9,
+      "duration": 1.623,
+      "instrument_count": 1,
+      "pitch_range": [
+        30,
+        47
+      ]
+    },
+    {
+      "filename": "mid-6_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dreamy",
+      "note_count": 9,
+      "duration": 1.625,
+      "instrument_count": 1,
+      "pitch_range": [
+        30,
+        66
+      ]
+    },
+    {
+      "filename": "mid-6_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dreamy",
+      "note_count": 9,
+      "duration": 1.623,
+      "instrument_count": 1,
+      "pitch_range": [
+        37,
+        62
+      ]
+    },
+    {
+      "filename": "mid-6_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dreamy",
+      "note_count": 9,
+      "duration": 1.634,
+      "instrument_count": 1,
+      "pitch_range": [
+        30,
+        62
+      ]
+    },
+    {
+      "filename": "mid-6_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "dreamy",
+      "note_count": 9,
+      "duration": 1.63,
+      "instrument_count": 1,
+      "pitch_range": [
+        30,
+        62
+      ]
+    },
+    {
+      "filename": "mid-6_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "energetic",
+      "note_count": 9,
+      "duration": 1.616,
+      "instrument_count": 1,
+      "pitch_range": [
+        47,
+        71
+      ]
+    },
+    {
+      "filename": "mid-6_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "energetic",
+      "note_count": 9,
+      "duration": 1.607,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        66
+      ]
+    },
+    {
+      "filename": "mid-6_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "energetic",
+      "note_count": 9,
+      "duration": 1.618,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        66
+      ]
+    },
+    {
+      "filename": "mid-6_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "energetic",
+      "note_count": 9,
+      "duration": 1.618,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        66
+      ]
+    },
+    {
+      "filename": "mid-6_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "tense",
+      "note_count": 9,
+      "duration": 1.62,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        71
+      ]
+    },
+    {
+      "filename": "mid-6_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "tense",
+      "note_count": 9,
+      "duration": 1.627,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        62
+      ]
+    },
+    {
+      "filename": "mid-6_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "tense",
+      "note_count": 9,
+      "duration": 1.618,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        71
+      ]
+    },
+    {
+      "filename": "mid-6_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [
+        {
+          "code": "LOW_NOTE_COUNT",
+          "message": "Note count (9) is low but valid",
+          "details": null
+        }
+      ],
+      "mood": "tense",
+      "note_count": 9,
+      "duration": 1.627,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        66
+      ]
+    },
+    {
+      "filename": "mid-5_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 6.898,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        61
+      ]
+    },
+    {
+      "filename": "mid-5_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 6.895,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        63
+      ]
+    },
+    {
+      "filename": "mid-5_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 6.884,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        63
+      ]
+    },
+    {
+      "filename": "mid-5_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 6.9,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        63
+      ]
+    },
+    {
+      "filename": "mid-5_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 6.884,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        75
+      ]
+    },
+    {
+      "filename": "mid-5_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 6.895,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        75
+      ]
+    },
+    {
+      "filename": "mid-5_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 6.905,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        75
+      ]
+    },
+    {
+      "filename": "mid-5_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 6.9,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        75
+      ]
+    },
+    {
+      "filename": "mid-5_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 6.836,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        75
+      ]
+    },
+    {
+      "filename": "mid-5_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 6.834,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        75
+      ]
+    },
+    {
+      "filename": "mid-5_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 6.836,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        75
+      ]
+    },
+    {
+      "filename": "mid-5_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 6.823,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        75
+      ]
+    },
+    {
+      "filename": "mid-5_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 6.839,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        75
+      ]
+    },
+    {
+      "filename": "mid-5_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 6.845,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        75
+      ]
+    },
+    {
+      "filename": "mid-5_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 6.809,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        75
+      ]
+    },
+    {
+      "filename": "mid-5_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 6.848,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        75
+      ]
+    },
+    {
+      "filename": "mid-4_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 6.895,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        68
+      ]
+    },
+    {
+      "filename": "mid-4_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 6.886,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        68
+      ]
+    },
+    {
+      "filename": "mid-4_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 6.895,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        70
+      ]
+    },
+    {
+      "filename": "mid-4_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 6.891,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        70
+      ]
+    },
+    {
+      "filename": "mid-4_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 6.893,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        78
+      ]
+    },
+    {
+      "filename": "mid-4_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 6.907,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        82
+      ]
+    },
+    {
+      "filename": "mid-4_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 6.902,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        82
+      ]
+    },
+    {
+      "filename": "mid-4_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 6.907,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        82
+      ]
+    },
+    {
+      "filename": "mid-4_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 6.82,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-4_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 6.839,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-4_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 6.857,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-4_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 6.836,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-4_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 6.834,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-4_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 6.834,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-4_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 6.827,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-4_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 6.82,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-2-2_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 21,
+      "duration": 3.35,
+      "instrument_count": 1,
+      "pitch_range": [
+        27,
+        46
+      ]
+    },
+    {
+      "filename": "mid-2-2_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 21,
+      "duration": 3.357,
+      "instrument_count": 1,
+      "pitch_range": [
+        27,
+        42
+      ]
+    },
+    {
+      "filename": "mid-2-2_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 21,
+      "duration": 3.366,
+      "instrument_count": 1,
+      "pitch_range": [
+        27,
+        46
+      ]
+    },
+    {
+      "filename": "mid-2-2_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 21,
+      "duration": 3.359,
+      "instrument_count": 1,
+      "pitch_range": [
+        27,
+        46
+      ]
+    },
+    {
+      "filename": "mid-2-2_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 21,
+      "duration": 3.364,
+      "instrument_count": 1,
+      "pitch_range": [
+        27,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 21,
+      "duration": 3.359,
+      "instrument_count": 1,
+      "pitch_range": [
+        27,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 21,
+      "duration": 3.384,
+      "instrument_count": 1,
+      "pitch_range": [
+        27,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 21,
+      "duration": 3.352,
+      "instrument_count": 1,
+      "pitch_range": [
+        27,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 21,
+      "duration": 3.307,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 21,
+      "duration": 3.305,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 21,
+      "duration": 3.3,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 21,
+      "duration": 3.295,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 21,
+      "duration": 3.302,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 21,
+      "duration": 3.307,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 21,
+      "duration": 3.298,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2-2_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 21,
+      "duration": 3.295,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        58
+      ]
+    },
+    {
+      "filename": "mid-1_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 7.286,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        72
+      ]
+    },
+    {
+      "filename": "mid-1_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 7.284,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        72
+      ]
+    },
+    {
+      "filename": "mid-1_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 7.289,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        72
+      ]
+    },
+    {
+      "filename": "mid-1_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 7.282,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        72
+      ]
+    },
+    {
+      "filename": "mid-1_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 7.282,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        84
+      ]
+    },
+    {
+      "filename": "mid-1_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 7.28,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        84
+      ]
+    },
+    {
+      "filename": "mid-1_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 7.284,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        84
+      ]
+    },
+    {
+      "filename": "mid-1_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 7.282,
+      "instrument_count": 1,
+      "pitch_range": [
+        48,
+        84
+      ]
+    },
+    {
+      "filename": "mid-1_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 7.266,
+      "instrument_count": 1,
+      "pitch_range": [
+        60,
+        84
+      ]
+    },
+    {
+      "filename": "mid-1_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 7.27,
+      "instrument_count": 1,
+      "pitch_range": [
+        60,
+        84
+      ]
+    },
+    {
+      "filename": "mid-1_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 7.259,
+      "instrument_count": 1,
+      "pitch_range": [
+        60,
+        84
+      ]
+    },
+    {
+      "filename": "mid-1_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 7.27,
+      "instrument_count": 1,
+      "pitch_range": [
+        60,
+        84
+      ]
+    },
+    {
+      "filename": "mid-1_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 7.282,
+      "instrument_count": 1,
+      "pitch_range": [
+        60,
+        84
+      ]
+    },
+    {
+      "filename": "mid-1_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 7.273,
+      "instrument_count": 1,
+      "pitch_range": [
+        60,
+        84
+      ]
+    },
+    {
+      "filename": "mid-1_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 7.27,
+      "instrument_count": 1,
+      "pitch_range": [
+        60,
+        84
+      ]
+    },
+    {
+      "filename": "mid-1_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 7.273,
+      "instrument_count": 1,
+      "pitch_range": [
+        60,
+        84
+      ]
+    },
+    {
+      "filename": "mid-3_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 40,
+      "duration": 7.32,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        54
+      ]
+    },
+    {
+      "filename": "mid-3_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 40,
+      "duration": 7.336,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        54
+      ]
+    },
+    {
+      "filename": "mid-3_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 40,
+      "duration": 7.35,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        54
+      ]
+    },
+    {
+      "filename": "mid-3_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 40,
+      "duration": 7.402,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        54
+      ]
+    },
+    {
+      "filename": "mid-3_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 40,
+      "duration": 7.445,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        66
+      ]
+    },
+    {
+      "filename": "mid-3_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 40,
+      "duration": 7.343,
+      "instrument_count": 1,
+      "pitch_range": [
+        27,
+        66
+      ]
+    },
+    {
+      "filename": "mid-3_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 40,
+      "duration": 7.443,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        66
+      ]
+    },
+    {
+      "filename": "mid-3_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 40,
+      "duration": 7.393,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        66
+      ]
+    },
+    {
+      "filename": "mid-3_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 40,
+      "duration": 7.38,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        66
+      ]
+    },
+    {
+      "filename": "mid-3_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 40,
+      "duration": 7.359,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        66
+      ]
+    },
+    {
+      "filename": "mid-3_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 40,
+      "duration": 7.361,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        66
+      ]
+    },
+    {
+      "filename": "mid-3_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 40,
+      "duration": 7.38,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        66
+      ]
+    },
+    {
+      "filename": "mid-3_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 40,
+      "duration": 7.364,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        66
+      ]
+    },
+    {
+      "filename": "mid-3_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 40,
+      "duration": 7.355,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        66
+      ]
+    },
+    {
+      "filename": "mid-3_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 40,
+      "duration": 7.345,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        66
+      ]
+    },
+    {
+      "filename": "mid-3_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 40,
+      "duration": 7.368,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        66
+      ]
+    },
+    {
+      "filename": "mid-2_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 21,
+      "duration": 3.352,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 21,
+      "duration": 3.361,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 21,
+      "duration": 3.352,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        58
+      ]
+    },
+    {
+      "filename": "mid-2_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 21,
+      "duration": 3.35,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        54
+      ]
+    },
+    {
+      "filename": "mid-2_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 21,
+      "duration": 3.348,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        70
+      ]
+    },
+    {
+      "filename": "mid-2_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 21,
+      "duration": 3.355,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        70
+      ]
+    },
+    {
+      "filename": "mid-2_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 21,
+      "duration": 3.355,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        70
+      ]
+    },
+    {
+      "filename": "mid-2_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 21,
+      "duration": 3.359,
+      "instrument_count": 1,
+      "pitch_range": [
+        39,
+        70
+      ]
+    },
+    {
+      "filename": "mid-2_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 21,
+      "duration": 3.295,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        70
+      ]
+    },
+    {
+      "filename": "mid-2_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 21,
+      "duration": 3.309,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        70
+      ]
+    },
+    {
+      "filename": "mid-2_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 21,
+      "duration": 3.316,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        70
+      ]
+    },
+    {
+      "filename": "mid-2_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 21,
+      "duration": 3.302,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        70
+      ]
+    },
+    {
+      "filename": "mid-2_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 21,
+      "duration": 3.3,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        70
+      ]
+    },
+    {
+      "filename": "mid-2_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 21,
+      "duration": 3.305,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        70
+      ]
+    },
+    {
+      "filename": "mid-2_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 21,
+      "duration": 3.291,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        70
+      ]
+    },
+    {
+      "filename": "mid-2_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 21,
+      "duration": 3.302,
+      "instrument_count": 1,
+      "pitch_range": [
+        51,
+        70
+      ]
+    },
+    {
+      "filename": "mid-5-2_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 20,
+      "duration": 6.755,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        58
+      ]
+    },
+    {
+      "filename": "mid-5-2_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 20,
+      "duration": 6.905,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        58
+      ]
+    },
+    {
+      "filename": "mid-5-2_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 20,
+      "duration": 6.905,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        59
+      ]
+    },
+    {
+      "filename": "mid-5-2_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 20,
+      "duration": 6.766,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        59
+      ]
+    },
+    {
+      "filename": "mid-5-2_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 20,
+      "duration": 6.943,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        71
+      ]
+    },
+    {
+      "filename": "mid-5-2_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 20,
+      "duration": 6.936,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        71
+      ]
+    },
+    {
+      "filename": "mid-5-2_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 20,
+      "duration": 6.916,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        71
+      ]
+    },
+    {
+      "filename": "mid-5-2_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 20,
+      "duration": 6.943,
+      "instrument_count": 1,
+      "pitch_range": [
+        20,
+        70
+      ]
+    },
+    {
+      "filename": "mid-5-2_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 20,
+      "duration": 6.834,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        71
+      ]
+    },
+    {
+      "filename": "mid-5-2_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 20,
+      "duration": 6.636,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        71
+      ]
+    },
+    {
+      "filename": "mid-5-2_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 20,
+      "duration": 6.832,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        71
+      ]
+    },
+    {
+      "filename": "mid-5-2_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 20,
+      "duration": 6.845,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        71
+      ]
+    },
+    {
+      "filename": "mid-5-2_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 6.809,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        71
+      ]
+    },
+    {
+      "filename": "mid-5-2_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 6.827,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        70
+      ]
+    },
+    {
+      "filename": "mid-5-2_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 6.777,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        71
+      ]
+    },
+    {
+      "filename": "mid-5-2_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 20,
+      "duration": 6.811,
+      "instrument_count": 1,
+      "pitch_range": [
+        32,
+        71
+      ]
+    },
+    {
+      "filename": "midi-7.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 1.714,
+      "instrument_count": 1,
+      "pitch_range": [
+        54,
+        73
+      ]
+    },
+    {
+      "filename": "midi-8.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "ominous",
+      "note_count": 16,
+      "duration": 3.321,
+      "instrument_count": 1,
+      "pitch_range": [
+        74,
+        82
+      ]
+    },
+    {
+      "filename": "midi-9.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 3.321,
+      "instrument_count": 1,
+      "pitch_range": [
+        67,
+        77
+      ]
+    },
+    {
+      "filename": "midi-9_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 3.343,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        76
+      ]
+    },
+    {
+      "filename": "midi-9_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 3.366,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        77
+      ]
+    },
+    {
+      "filename": "midi-9_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 3.339,
+      "instrument_count": 1,
+      "pitch_range": [
+        57,
+        76
+      ]
+    },
+    {
+      "filename": "midi-9_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 3.359,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        72
+      ]
+    },
+    {
+      "filename": "midi-9_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 3.382,
+      "instrument_count": 1,
+      "pitch_range": [
+        57,
+        83
+      ]
+    },
+    {
+      "filename": "midi-9_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 3.375,
+      "instrument_count": 1,
+      "pitch_range": [
+        57,
+        88
+      ]
+    },
+    {
+      "filename": "midi-9_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 3.373,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        88
+      ]
+    },
+    {
+      "filename": "midi-9_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 3.38,
+      "instrument_count": 1,
+      "pitch_range": [
+        55,
+        84
+      ]
+    },
+    {
+      "filename": "midi-9_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 3.311,
+      "instrument_count": 1,
+      "pitch_range": [
+        67,
+        89
+      ]
+    },
+    {
+      "filename": "midi-9_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 3.284,
+      "instrument_count": 1,
+      "pitch_range": [
+        69,
+        89
+      ]
+    },
+    {
+      "filename": "midi-9_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 3.311,
+      "instrument_count": 1,
+      "pitch_range": [
+        67,
+        89
+      ]
+    },
+    {
+      "filename": "midi-9_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 3.302,
+      "instrument_count": 1,
+      "pitch_range": [
+        67,
+        89
+      ]
+    },
+    {
+      "filename": "midi-9_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 3.3,
+      "instrument_count": 1,
+      "pitch_range": [
+        69,
+        89
+      ]
+    },
+    {
+      "filename": "midi-9_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 3.28,
+      "instrument_count": 1,
+      "pitch_range": [
+        67,
+        89
+      ]
+    },
+    {
+      "filename": "midi-9_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 3.291,
+      "instrument_count": 1,
+      "pitch_range": [
+        67,
+        88
+      ]
+    },
+    {
+      "filename": "midi-9_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 3.3,
+      "instrument_count": 1,
+      "pitch_range": [
+        69,
+        88
+      ]
+    },
+    {
+      "filename": "midi-8_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 3.336,
+      "instrument_count": 1,
+      "pitch_range": [
+        62,
+        81
+      ]
+    },
+    {
+      "filename": "midi-8_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 3.355,
+      "instrument_count": 1,
+      "pitch_range": [
+        62,
+        82
+      ]
+    },
+    {
+      "filename": "midi-8_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 3.35,
+      "instrument_count": 1,
+      "pitch_range": [
+        62,
+        82
+      ]
+    },
+    {
+      "filename": "midi-8_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 3.357,
+      "instrument_count": 1,
+      "pitch_range": [
+        62,
+        82
+      ]
+    },
+    {
+      "filename": "midi-8_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 3.373,
+      "instrument_count": 1,
+      "pitch_range": [
+        62,
+        94
+      ]
+    },
+    {
+      "filename": "midi-8_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 3.368,
+      "instrument_count": 1,
+      "pitch_range": [
+        62,
+        94
+      ]
+    },
+    {
+      "filename": "midi-8_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 3.373,
+      "instrument_count": 1,
+      "pitch_range": [
+        67,
+        94
+      ]
+    },
+    {
+      "filename": "midi-8_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 3.38,
+      "instrument_count": 1,
+      "pitch_range": [
+        67,
+        94
+      ]
+    },
+    {
+      "filename": "midi-8_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 3.302,
+      "instrument_count": 1,
+      "pitch_range": [
+        74,
+        94
+      ]
+    },
+    {
+      "filename": "midi-8_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 3.305,
+      "instrument_count": 1,
+      "pitch_range": [
+        79,
+        94
+      ]
+    },
+    {
+      "filename": "midi-8_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 3.302,
+      "instrument_count": 1,
+      "pitch_range": [
+        79,
+        94
+      ]
+    },
+    {
+      "filename": "midi-8_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 3.293,
+      "instrument_count": 1,
+      "pitch_range": [
+        74,
+        94
+      ]
+    },
+    {
+      "filename": "midi-8_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 3.284,
+      "instrument_count": 1,
+      "pitch_range": [
+        74,
+        94
+      ]
+    },
+    {
+      "filename": "midi-8_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 3.27,
+      "instrument_count": 1,
+      "pitch_range": [
+        74,
+        94
+      ]
+    },
+    {
+      "filename": "midi-8_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 3.302,
+      "instrument_count": 1,
+      "pitch_range": [
+        74,
+        94
+      ]
+    },
+    {
+      "filename": "midi-8_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 3.282,
+      "instrument_count": 1,
+      "pitch_range": [
+        74,
+        94
+      ]
+    },
+    {
+      "filename": "midi-7_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 1.741,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        73
+      ]
+    },
+    {
+      "filename": "midi-7_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 1.741,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        73
+      ]
+    },
+    {
+      "filename": "midi-7_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 1.736,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        71
+      ]
+    },
+    {
+      "filename": "midi-7_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 16,
+      "duration": 1.752,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        71
+      ]
+    },
+    {
+      "filename": "midi-7_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 1.773,
+      "instrument_count": 1,
+      "pitch_range": [
+        45,
+        85
+      ]
+    },
+    {
+      "filename": "midi-7_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 1.67,
+      "instrument_count": 1,
+      "pitch_range": [
+        42,
+        83
+      ]
+    },
+    {
+      "filename": "midi-7_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 1.741,
+      "instrument_count": 1,
+      "pitch_range": [
+        54,
+        85
+      ]
+    },
+    {
+      "filename": "midi-7_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 16,
+      "duration": 1.777,
+      "instrument_count": 1,
+      "pitch_range": [
+        45,
+        81
+      ]
+    },
+    {
+      "filename": "midi-7_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 1.598,
+      "instrument_count": 1,
+      "pitch_range": [
+        54,
+        83
+      ]
+    },
+    {
+      "filename": "midi-7_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 1.695,
+      "instrument_count": 1,
+      "pitch_range": [
+        54,
+        78
+      ]
+    },
+    {
+      "filename": "midi-7_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 1.693,
+      "instrument_count": 1,
+      "pitch_range": [
+        61,
+        83
+      ]
+    },
+    {
+      "filename": "midi-7_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 16,
+      "duration": 1.695,
+      "instrument_count": 1,
+      "pitch_range": [
+        59,
+        85
+      ]
+    },
+    {
+      "filename": "midi-7_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 1.689,
+      "instrument_count": 1,
+      "pitch_range": [
+        54,
+        85
+      ]
+    },
+    {
+      "filename": "midi-7_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 1.693,
+      "instrument_count": 1,
+      "pitch_range": [
+        54,
+        73
+      ]
+    },
+    {
+      "filename": "midi-7_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 1.682,
+      "instrument_count": 1,
+      "pitch_range": [
+        54,
+        83
+      ]
+    },
+    {
+      "filename": "midi-7_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 16,
+      "duration": 1.666,
+      "instrument_count": 1,
+      "pitch_range": [
+        54,
+        83
+      ]
+    },
+    {
+      "filename": "mid-10.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "neutral",
+      "note_count": 64,
+      "duration": 7.385,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        70
+      ]
+    },
+    {
+      "filename": "mid-10_melancholic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 7.405,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        70
+      ]
+    },
+    {
+      "filename": "mid-10_melancholic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 7.407,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        70
+      ]
+    },
+    {
+      "filename": "mid-10_melancholic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 7.407,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        70
+      ]
+    },
+    {
+      "filename": "mid-10_melancholic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "melancholic",
+      "note_count": 64,
+      "duration": 7.309,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        70
+      ]
+    },
+    {
+      "filename": "mid-10_dreamy_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 7.43,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        80
+      ]
+    },
+    {
+      "filename": "mid-10_dreamy_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 7.414,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        82
+      ]
+    },
+    {
+      "filename": "mid-10_dreamy_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 7.418,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        82
+      ]
+    },
+    {
+      "filename": "mid-10_dreamy_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "dreamy",
+      "note_count": 64,
+      "duration": 7.3,
+      "instrument_count": 1,
+      "pitch_range": [
+        23,
+        82
+      ]
+    },
+    {
+      "filename": "mid-10_energetic_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 7.377,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-10_energetic_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 7.375,
+      "instrument_count": 1,
+      "pitch_range": [
+        40,
+        82
+      ]
+    },
+    {
+      "filename": "mid-10_energetic_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 7.373,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-10_energetic_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "energetic",
+      "note_count": 64,
+      "duration": 7.375,
+      "instrument_count": 1,
+      "pitch_range": [
+        40,
+        82
+      ]
+    },
+    {
+      "filename": "mid-10_tense_v0.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 7.355,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-10_tense_v1.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 7.361,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-10_tense_v2.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 7.359,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    },
+    {
+      "filename": "mid-10_tense_v3.mid",
+      "is_valid": true,
+      "errors": [],
+      "warnings": [],
+      "mood": "tense",
+      "note_count": 64,
+      "duration": 7.359,
+      "instrument_count": 1,
+      "pitch_range": [
+        35,
+        82
+      ]
+    }
+  ],
+  "invalid_files": [],
+  "missing_files": []
+}

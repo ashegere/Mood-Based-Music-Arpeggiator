@@ -1,0 +1,36 @@
+.trusted-section {
+  padding: 80px 0;
+  text-align: center;
+  opacity: 0;
+  animation: fadeInUp 1s ease 1.2s forwards;
+}
+
+.trusted-title {
+  font-family: var(--font-display);
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 50px;
+}
+
+.trusted-logos {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 60px;
+  flex-wrap: wrap;
+}
+
+.logo-item {
+  opacity: 0.5;
+  transition: opacity var(--transition-speed) var(--transition-ease);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-tertiary);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.logo-item:hover {
+  opacity: 1;
+}

@@ -3,8 +3,20 @@ transformers==4.36.0
 miditok==2.1.5
 pretty-midi==0.2.10
 note-seq== 0.0.5
+music21==8.3.0
 fastapi==0.104.1
 uvicorn[standard]==0.24.0
 pydantic==2.5.0
+pydantic-settings==2.1.0
+email-validator==2.1.0
 python-multipart==0.0.6
-numpy==1.24.3
+numpy==1.23.5
+sqlalchemy==2.0.23
+psycopg2-binary==2.9.9
+passlib==1.7.4
+bcrypt==4.1.1
+python-jose[cryptography]==3.3.0
+google-auth==2.25.2
+google-auth-oauthlib==1.1.0
+google-auth-httplib2==0.1.1
+requests==2.31.0
