@@ -72,9 +72,12 @@ class GenerateArpeggioRequest(BaseModel):
         le=8,
         description="Starting octave (0–8; 4 = middle C octave)",
     )
-    pattern: str = Field(
-        "ascending",
-        description="Arpeggio pattern: ascending, descending, up_down, down_up",
+    pattern: Optional[str] = Field(
+        None,
+        description=(
+            "Arpeggio pattern: ascending, descending, up_down, down_up. "
+            "Omit to let the model choose based on mood."
+        ),
     )
     seed: Optional[int] = Field(
         None,
@@ -102,7 +105,9 @@ class GenerateArpeggioRequest(BaseModel):
 
     @field_validator("pattern")
     @classmethod
-    def validate_pattern(cls, v: str) -> str:
+    def validate_pattern(cls, v: Optional[str]) -> Optional[str]:
+        if v is None:
+            return None
         v = v.lower()
         if v not in _VALID_PATTERNS:
             raise ValueError(

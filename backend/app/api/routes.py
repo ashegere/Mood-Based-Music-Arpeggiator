@@ -123,6 +123,37 @@ _PATTERN_MAP: Dict[str, ArpeggioPattern] = {
     "down_up":    ArpeggioPattern.DOWN_UP,
 }
 
+# Mood label → candidate patterns (picked randomly per generation).
+# Multiple entries give variety; the request_seed selects among them so
+# identical seeds reproduce the same pattern choice.
+_MOOD_PATTERNS: Dict[int, List[ArpeggioPattern]] = {
+    0:  [ArpeggioPattern.UP_DOWN,    ArpeggioPattern.DESCENDING,  ArpeggioPattern.DOWN_UP],    # melancholic
+    1:  [ArpeggioPattern.UP_DOWN,    ArpeggioPattern.ASCENDING,   ArpeggioPattern.DOWN_UP],    # dreamy
+    2:  [ArpeggioPattern.ASCENDING,  ArpeggioPattern.UP_DOWN,     ArpeggioPattern.DOWN_UP],    # energetic
+    3:  [ArpeggioPattern.DOWN_UP,    ArpeggioPattern.DESCENDING,  ArpeggioPattern.UP_DOWN],    # tense
+    4:  [ArpeggioPattern.ASCENDING,  ArpeggioPattern.UP_DOWN,     ArpeggioPattern.DOWN_UP],    # happy
+    5:  [ArpeggioPattern.DESCENDING, ArpeggioPattern.DOWN_UP,     ArpeggioPattern.UP_DOWN],    # sad
+    6:  [ArpeggioPattern.UP_DOWN,    ArpeggioPattern.ASCENDING,   ArpeggioPattern.DOWN_UP],    # calm
+    7:  [ArpeggioPattern.DESCENDING, ArpeggioPattern.DOWN_UP,     ArpeggioPattern.UP_DOWN],    # dark
+    8:  [ArpeggioPattern.ASCENDING,  ArpeggioPattern.UP_DOWN,     ArpeggioPattern.DOWN_UP],    # joyful
+    9:  [ArpeggioPattern.ASCENDING,  ArpeggioPattern.UP_DOWN,     ArpeggioPattern.DOWN_UP],    # uplifting
+    10: [ArpeggioPattern.DOWN_UP,    ArpeggioPattern.ASCENDING,   ArpeggioPattern.DESCENDING], # intense
+    11: [ArpeggioPattern.UP_DOWN,    ArpeggioPattern.ASCENDING,   ArpeggioPattern.DOWN_UP],    # peaceful
+    12: [ArpeggioPattern.DOWN_UP,    ArpeggioPattern.DESCENDING,  ArpeggioPattern.ASCENDING],  # dramatic
+    13: [ArpeggioPattern.ASCENDING,  ArpeggioPattern.DOWN_UP,     ArpeggioPattern.UP_DOWN],    # epic
+    14: [ArpeggioPattern.DOWN_UP,    ArpeggioPattern.UP_DOWN,     ArpeggioPattern.DESCENDING], # mysterious
+    15: [ArpeggioPattern.UP_DOWN,    ArpeggioPattern.ASCENDING,   ArpeggioPattern.DOWN_UP],    # romantic
+    16: [ArpeggioPattern.ASCENDING,  ArpeggioPattern.UP_DOWN,     ArpeggioPattern.DOWN_UP],    # neutral
+    17: [ArpeggioPattern.UP_DOWN,    ArpeggioPattern.ASCENDING,   ArpeggioPattern.DOWN_UP],    # flowing
+    18: [ArpeggioPattern.DESCENDING, ArpeggioPattern.DOWN_UP,     ArpeggioPattern.UP_DOWN],    # ominous
+}
+
+
+def _resolve_pattern(mood_label: int, seed: int) -> ArpeggioPattern:
+    """Pick an arpeggio pattern for the given mood, seeded for reproducibility."""
+    candidates = _MOOD_PATTERNS.get(mood_label, [ArpeggioPattern.ASCENDING])
+    return _random.Random(seed).choice(candidates)
+
 
 # ---------------------------------------------------------------------------
 # Mood → velocity profile  (base_velocity, variance)
@@ -364,14 +395,21 @@ async def generate_arpeggio(request: GenerateArpeggioRequest) -> GenerateArpeggi
             else _random.randint(0, 2_147_483_647)
         )
 
-        # 2. Base arpeggio — always generates exactly note_count notes
+        # 2. Base arpeggio — always generates exactly note_count notes.
+        # When the caller omits pattern, derive it from the mood so the
+        # shape of the arpeggio reflects the emotional intent.
+        if request.pattern is not None:
+            chosen_pattern = _PATTERN_MAP[request.pattern]
+        else:
+            chosen_pattern = _resolve_pattern(mood_label, request_seed)
+
         arpeggio = ArpeggioGenerator().generate(
             key=request.key,
             scale=request.scale,
             tempo=request.tempo,
             note_count=request.note_count,
             seed=request_seed,
-            pattern=_PATTERN_MAP[request.pattern],
+            pattern=chosen_pattern,
             octave=request.octave,
         )
 

@@ -31,13 +31,6 @@ const SCALES = [
   { value: 'chromatic',       label: 'Chromatic' },
 ];
 
-const PATTERNS = [
-  { value: 'ascending',  label: '↑ Ascending' },
-  { value: 'descending', label: '↓ Descending' },
-  { value: 'up_down',    label: '↑↓ Up / Down' },
-  { value: 'down_up',    label: '↓↑ Down / Up' },
-];
-
 const WAVEFORMS = {
   'Synth Pluck': 'sawtooth',
   'Piano':       'triangle',
@@ -67,7 +60,6 @@ const Home = () => {
   const [scale,      setScale]      = useState('major');
   const [noteCount,  setNoteCount]  = useState(16);
   const [mood,       setMood]       = useState('');
-  const [pattern,    setPattern]    = useState('ascending');
   const [octave,     setOctave]     = useState(4);
   const [instrument, setInstrument] = useState('Piano');
 
@@ -101,7 +93,6 @@ const Home = () => {
         note_count: parseInt(noteCount),
         mood:       mood.trim(),
         octave:     parseInt(octave),
-        pattern,
       });
       setResult(data);
     } catch (err) {
@@ -266,25 +257,14 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Scale + Pattern */}
-          <div className="two-col">
-            <div className="control-group">
-              <label>Scale</label>
-              <div className="select-wrapper">
-                <select value={scale} onChange={e => setScale(e.target.value)} className="scale-select">
-                  {SCALES.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
-                </select>
-                <ChevronDown className="select-icon" size={20} />
-              </div>
-            </div>
-            <div className="control-group">
-              <label>Pattern</label>
-              <div className="select-wrapper">
-                <select value={pattern} onChange={e => setPattern(e.target.value)} className="scale-select">
-                  {PATTERNS.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
-                </select>
-                <ChevronDown className="select-icon" size={20} />
-              </div>
+          {/* Scale */}
+          <div className="control-group">
+            <label>Scale</label>
+            <div className="select-wrapper">
+              <select value={scale} onChange={e => setScale(e.target.value)} className="scale-select">
+                {SCALES.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
+              </select>
+              <ChevronDown className="select-icon" size={20} />
             </div>
           </div>
 
