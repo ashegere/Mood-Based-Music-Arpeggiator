@@ -1,8 +1,16 @@
 """
 FastAPI application entry point.
 
-Startup loads the inference engine once; all requests share the singleton.
+Startup wires the active generation backend via dependency injection:
+  1. Instantiate ``CustomTransformerGenerator`` with the checkpoint path.
+  2. Call ``generator.load()`` to allocate model weights.
+  3. Call ``set_generator(generator)`` to make it available to route handlers.
+
+Swapping backends requires only changing steps 1-3 here — routes and schemas
+are untouched because they depend only on the ``BaseGenerator`` interface.
 """
+
+from __future__ import annotations
 
 import logging
 from contextlib import asynccontextmanager
@@ -12,9 +20,10 @@ from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
 from app.api import routes
+from app.api.dependencies import get_generator, set_generator
 from app.config import settings
 from app.database import Base, engine
-from app.model.inference import load_model
+from app.generators.transformer import CustomTransformerGenerator
 from app.routers import auth
 
 logging.basicConfig(
@@ -26,7 +35,7 @@ logger = logging.getLogger(__name__)
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
-    # --------------- startup ---------------
+    # ------------------------------------------------------------------ startup
     logger.info("Starting %s v%s", settings.APP_NAME, settings.VERSION)
 
     try:
@@ -36,16 +45,23 @@ async def lifespan(app: FastAPI):
         logger.warning("Database init skipped: %s", exc)
 
     try:
-        _base = Path(__file__).parent.parent   # backend/
+        _base      = Path(__file__).parent.parent          # backend/
         checkpoint = _base / "checkpoints" / "best_model.pt"
         dataset    = _base / "data" / "training" / "train_dataset.pt"
-        load_model(checkpoint, dataset_path=dataset if dataset.exists() else None)
-        logger.info("Inference engine loaded from %s", checkpoint)
+
+        generator = CustomTransformerGenerator(
+            checkpoint_path=checkpoint,
+            dataset_path=dataset if dataset.exists() else None,
+        )
+        generator.load()
+        set_generator(generator)
+        logger.info("Generator '%s' ready (device=%s)", generator.name, generator._engine.device)
     except Exception as exc:
-        logger.error("Failed to load inference engine: %s", exc, exc_info=True)
+        logger.error("Failed to load generator: %s", exc, exc_info=True)
+        # Service starts without a generator; /health will report not-ready.
 
     yield
-    # --------------- shutdown ---------------
+    # ----------------------------------------------------------------- shutdown
     logger.info("Shutting down")
 
 
@@ -79,13 +95,22 @@ async def root():
 
 @app.get("/health", tags=["Health"])
 async def health_check():
-    from app.model.inference import get_engine
-    engine = get_engine()
-    return {
-        "status": "healthy" if engine.is_loaded else "initializing",
-        "model_loaded": engine.is_loaded,
-        "version": settings.VERSION,
-    }
+    """Report service health and the active generator backend."""
+    try:
+        gen = get_generator()
+        return {
+            "status":       "healthy",
+            "model_loaded": True,
+            "backend":      gen.name,
+            "version":      settings.VERSION,
+        }
+    except Exception:
+        return {
+            "status":       "initializing",
+            "model_loaded": False,
+            "backend":      None,
+            "version":      settings.VERSION,
+        }
 
 
 if __name__ == "__main__":
