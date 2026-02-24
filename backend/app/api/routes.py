@@ -344,16 +344,20 @@ async def generate_arpeggio(request: GenerateArpeggioRequest) -> GenerateArpeggi
         # 4. Inference — pass mood as int to use the 0-based label directly
         modified_ids = engine.run(tokens, mood_label)
 
-        # 5. Decode; fall back to base arpeggio on empty output
+        # 5. Decode; fall back to base arpeggio when output is too sparse.
+        # The model is mood-conditioned but may not always produce coherent
+        # note sequences — treat anything below 30 % of the requested count
+        # as a failed inference and use the deterministic base arpeggio instead.
         out_notes: List[Note] = []
         if modified_ids:
             out_notes = _tokens_to_notes(modified_ids, request.tempo)
 
-        if not out_notes:
+        min_acceptable = max(1, int(request.note_count * 0.30))
+        if len(out_notes) < min_acceptable:
             logger.warning(
-                "Inference returned no decodable notes for mood='%s'; "
-                "falling back to base arpeggio",
-                request.mood,
+                "Inference returned only %d note(s) for mood='%s' "
+                "(requested %d, threshold %d); falling back to base arpeggio",
+                len(out_notes), request.mood, request.note_count, min_acceptable,
             )
             out_notes = list(arpeggio.notes)
 
