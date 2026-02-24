@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Music, Mail, Lock, User, Eye, EyeOff } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
+import { signup as apiSignup } from '../services/api';
 import './Signup.css';
 
 const Signup = () => {
@@ -51,29 +52,9 @@ const Signup = () => {
     setLoading(true);
 
     try {
-      const response = await fetch('http://localhost:8006/api/auth/signup', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          full_name: formData.fullName,
-          email: formData.email,
-          password: formData.password
-        }),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.detail || 'Signup failed');
-      }
-
-      // Store token
+      const data = await apiSignup(formData.email, formData.password, formData.fullName);
       localStorage.setItem('token', data.access_token);
       localStorage.setItem('user', JSON.stringify(data.user));
-
-      // Redirect to home page
       navigate('/home');
     } catch (err) {
       setError(err.message || 'An error occurred during signup');
@@ -89,7 +70,7 @@ const Signup = () => {
     const top = window.screen.height / 2 - height / 2;
 
     const popup = window.open(
-      'http://localhost:8006/api/auth/google/login',
+      '/api/auth/google/login',
       'Google Sign In',
       `width=${width},height=${height},left=${left},top=${top}`
     );

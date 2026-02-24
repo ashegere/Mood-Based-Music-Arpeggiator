@@ -1,57 +1,221 @@
-import React, { useState, useEffect } from 'react';
-import { Music, LogOut, Sparkles, Play, Download, ChevronDown } from 'lucide-react';
+import React, { useState, useEffect, useRef } from 'react';
+import { Music, LogOut, Sparkles, Play, Square, Download, ChevronDown } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import { generateArpeggio } from '../services/api';
 import './Home.css';
+
+// ---------------------------------------------------------------------------
+// Constants
+// ---------------------------------------------------------------------------
+
+const PITCH_NAMES = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+const pitchToName = (p) => `${PITCH_NAMES[p % 12]}${Math.floor(p / 12) - 1}`;
+const midiToFreq  = (p) => 440 * Math.pow(2, (p - 69) / 12);
+
+const SCALES = [
+  { value: 'major',           label: 'Major' },
+  { value: 'minor',           label: 'Minor' },
+  { value: 'dorian',          label: 'Dorian' },
+  { value: 'phrygian',        label: 'Phrygian' },
+  { value: 'lydian',          label: 'Lydian' },
+  { value: 'mixolydian',      label: 'Mixolydian' },
+  { value: 'aeolian',         label: 'Aeolian' },
+  { value: 'locrian',         label: 'Locrian' },
+  { value: 'harmonic_minor',  label: 'Harmonic Minor' },
+  { value: 'melodic_minor',   label: 'Melodic Minor' },
+  { value: 'natural_minor',   label: 'Natural Minor' },
+  { value: 'ionian',          label: 'Ionian' },
+  { value: 'pentatonic_major',label: 'Pentatonic Major' },
+  { value: 'pentatonic_minor',label: 'Pentatonic Minor' },
+  { value: 'blues',           label: 'Blues' },
+  { value: 'chromatic',       label: 'Chromatic' },
+];
+
+const PATTERNS = [
+  { value: 'ascending',  label: '↑ Ascending' },
+  { value: 'descending', label: '↓ Descending' },
+  { value: 'up_down',    label: '↑↓ Up / Down' },
+  { value: 'down_up',    label: '↓↑ Down / Up' },
+];
+
+const WAVEFORMS = {
+  'Synth Pluck': 'sawtooth',
+  'Piano':       'triangle',
+  'Guitar':      'square',
+  'Harp':        'sine',
+};
+
+const INSTRUMENTS = [
+  { name: 'Synth Pluck', icon: '🎵' },
+  { name: 'Piano',       icon: '🎹' },
+  { name: 'Guitar',      icon: '🎸' },
+  { name: 'Harp',        icon: '🎼' },
+];
+
+const KEYS = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+
+// ---------------------------------------------------------------------------
+// Component
+// ---------------------------------------------------------------------------
 
 const Home = () => {
   const navigate = useNavigate();
-  const [tempo, setTempo] = useState(120);
-  const [selectedKey, setSelectedKey] = useState('D');
-  const [scale, setScale] = useState('Major');
-  const [noteCount, setNoteCount] = useState(12);
-  const [mood, setMood] = useState('');
-  const [selectedInstrument, setSelectedInstrument] = useState('Piano');
-  const [hasGenerated, setHasGenerated] = useState(false);
 
-  // Mock data for visualization
-  const [patternData, setPatternData] = useState({
-    notes: ['C4', 'D4', 'E4', 'F4', 'G4', 'A4', 'B4', 'C5', 'D5', 'E5', 'F5', 'F5'],
-    heights: [65, 72, 75, 78, 82, 85, 88, 92, 95, 98, 100, 95],
-    noteRange: 'C4 - B5',
-    avgVelocity: 91,
-    patternLength: 12
-  });
+  // Build params
+  const [tempo,      setTempo]      = useState(120);
+  const [selectedKey,setSelectedKey]= useState('C');
+  const [scale,      setScale]      = useState('major');
+  const [noteCount,  setNoteCount]  = useState(16);
+  const [mood,       setMood]       = useState('');
+  const [pattern,    setPattern]    = useState('ascending');
+  const [octave,     setOctave]     = useState(4);
+  const [instrument, setInstrument] = useState('Piano');
 
-  const keys = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
-  const scales = ['Major', 'Minor', 'Dorian', 'Phrygian', 'Lydian', 'Mixolydian', 'Aeolian', 'Locrian'];
-  const instruments = [
-    { name: 'Synth Pluck', icon: '🎵' },
-    { name: 'Piano', icon: '🎹' },
-    { name: 'Guitar', icon: '🎸' },
-    { name: 'Harp', icon: '🎼' }
-  ];
+  // State
+  const [loading,    setLoading]    = useState(false);
+  const [error,      setError]      = useState('');
+  const [result,     setResult]     = useState(null);
+  const [isPlaying,  setIsPlaying]  = useState(false);
 
-  const handleGenerate = () => {
-    setHasGenerated(true);
-    // TODO: Call API to generate arpeggio
-  };
+  // Audio refs
+  const audioCtxRef   = useRef(null);
+  const oscillatorsRef= useRef([]);
 
   useEffect(() => {
-    // Redirect to landing page if user is not logged in
-    const token = localStorage.getItem('token');
-    if (!token) {
-      navigate('/');
-    }
+    if (!localStorage.getItem('token')) navigate('/');
   }, [navigate]);
 
+  // ---- API call -----------------------------------------------------------
+
+  const handleGenerate = async () => {
+    if (!mood.trim()) { setError('Please enter a mood description'); return; }
+    setError('');
+    setLoading(true);
+    stopPlayback();
+
+    try {
+      const data = await generateArpeggio({
+        key:        selectedKey,
+        scale,
+        tempo:      parseInt(tempo),
+        note_count: parseInt(noteCount),
+        mood:       mood.trim(),
+        octave:     parseInt(octave),
+        pattern,
+      });
+      setResult(data);
+    } catch (err) {
+      setError(err.message || 'Generation failed — is the backend running?');
+    } finally {
+      setLoading(false);
+    }
+  };
+
+  // ---- Audio playback -----------------------------------------------------
+
+  const stopPlayback = () => {
+    oscillatorsRef.current.forEach(osc => { try { osc.stop(0); } catch {} });
+    oscillatorsRef.current = [];
+    if (audioCtxRef.current) {
+      audioCtxRef.current.close();
+      audioCtxRef.current = null;
+    }
+    setIsPlaying(false);
+  };
+
+  const handlePlay = () => {
+    if (isPlaying) { stopPlayback(); return; }
+    if (!result)   return;
+
+    const ctx = new AudioContext();
+    audioCtxRef.current = ctx;
+
+    const waveform       = WAVEFORMS[instrument] || 'sine';
+    const secondsPerBeat = 60 / result.tempo;
+    const now            = ctx.currentTime + 0.05;
+
+    const oscs = result.notes.map(note => {
+      const start    = now + note.position * secondsPerBeat;
+      const dur      = Math.max(0.05, note.duration * secondsPerBeat);
+      const freq     = midiToFreq(note.pitch);
+      const peakGain = (note.velocity / 127) * 0.25;
+
+      const osc  = ctx.createOscillator();
+      const gain = ctx.createGain();
+
+      osc.type           = waveform;
+      osc.frequency.value= freq;
+      osc.connect(gain);
+      gain.connect(ctx.destination);
+
+      gain.gain.setValueAtTime(0, start);
+      gain.gain.linearRampToValueAtTime(peakGain, start + 0.01);
+      gain.gain.setValueAtTime(peakGain, start + dur - 0.03);
+      gain.gain.linearRampToValueAtTime(0, start + dur);
+
+      osc.start(start);
+      osc.stop(start + dur);
+      return osc;
+    });
+
+    oscillatorsRef.current = oscs;
+    setIsPlaying(true);
+
+    // Auto-stop when sequence ends
+    setTimeout(stopPlayback, (result.duration_seconds + 0.5) * 1000);
+  };
+
+  // ---- MIDI download ------------------------------------------------------
+
+  const handleDownload = () => {
+    if (!result) return;
+    const raw   = atob(result.midi_base64);
+    const bytes = new Uint8Array(raw.length);
+    for (let i = 0; i < raw.length; i++) bytes[i] = raw.charCodeAt(i);
+    const blob  = new Blob([bytes], { type: 'audio/midi' });
+    const url   = URL.createObjectURL(blob);
+    const a     = document.createElement('a');
+    a.href      = url;
+    a.download  = `arpeggio_${result.key}_${result.scale}_${result.tempo}bpm.mid`;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+  };
+
+  // ---- Logout -------------------------------------------------------------
+
   const handleLogout = () => {
+    stopPlayback();
     localStorage.removeItem('token');
     localStorage.removeItem('user');
     navigate('/');
   };
 
+  // ---- Visualization helpers ----------------------------------------------
+
+  const vizNotes = result?.notes ?? [];
+  const pitches  = vizNotes.map(n => n.pitch);
+  const minPitch = pitches.length ? Math.min(...pitches) : 0;
+  const maxPitch = pitches.length ? Math.max(...pitches) : 127;
+  const pitchRange  = Math.max(1, maxPitch - minPitch);
+  const avgVelocity = vizNotes.length
+    ? Math.round(vizNotes.reduce((s, n) => s + n.velocity, 0) / vizNotes.length)
+    : 0;
+  const noteRangeLabel = vizNotes.length
+    ? `${pitchToName(minPitch)} – ${pitchToName(maxPitch)}`
+    : '—';
+
+  // Downsample if more than 32 notes for readability
+  const displayNotes = vizNotes.length > 32
+    ? vizNotes.filter((_, i) => i % Math.ceil(vizNotes.length / 32) === 0).slice(0, 32)
+    : vizNotes;
+
+  // ---- Render -------------------------------------------------------------
+
   return (
     <div className="home-page">
+      {/* Header */}
       <header className="home-header">
         <div className="home-logo">
           <Music size={24} strokeWidth={3} />
@@ -59,158 +223,163 @@ const Home = () => {
         </div>
         <div className="home-nav">
           <button className="nav-btn">
-            <Sparkles size={18} />
-            Build
+            <Sparkles size={18} /> Build
           </button>
           <button className="nav-btn" onClick={handleLogout}>
-            <LogOut size={18} />
-            Log out
+            <LogOut size={18} /> Log out
           </button>
         </div>
       </header>
 
       <main className="home-content">
-        {/* Left Panel - Build Your Arpeggio */}
+        {/* ---- Left panel: Build ---- */}
         <div className="panel build-panel">
           <div className="panel-header">
             <span className="panel-icon">✨</span>
             <h2>Build Your Arpeggio</h2>
           </div>
 
+          {/* Tempo */}
           <div className="control-group">
             <label>Tempo (BPM)</label>
             <div className="slider-container">
               <div className="slider-track">
-                <div className="slider-fill" style={{ width: `${((tempo - 60) / (200 - 60)) * 100}%` }} />
-                <input
-                  type="range"
-                  min="60"
-                  max="200"
-                  value={tempo}
-                  onChange={(e) => setTempo(e.target.value)}
-                  className="slider"
-                />
+                <div className="slider-fill" style={{ width: `${((tempo - 20) / (400 - 20)) * 100}%` }} />
+                <input type="range" min="20" max="400" value={tempo}
+                  onChange={e => setTempo(e.target.value)} className="slider" />
               </div>
               <span className="slider-value">{tempo}</span>
             </div>
           </div>
 
+          {/* Key */}
           <div className="control-group">
             <label>Key</label>
             <div className="key-grid">
-              {keys.map((key) => (
-                <button
-                  key={key}
-                  className={`key-btn ${selectedKey === key ? 'selected' : ''}`}
-                  onClick={() => setSelectedKey(key)}
-                >
-                  {key}
+              {KEYS.map(k => (
+                <button key={k}
+                  className={`key-btn ${selectedKey === k ? 'selected' : ''}`}
+                  onClick={() => setSelectedKey(k)}>
+                  {k}
                 </button>
               ))}
             </div>
           </div>
 
-          <div className="control-group">
-            <label>Scale</label>
-            <div className="select-wrapper">
-              <select
-                value={scale}
-                onChange={(e) => setScale(e.target.value)}
-                className="scale-select"
-              >
-                {scales.map((s) => (
-                  <option key={s} value={s}>{s}</option>
-                ))}
-              </select>
-              <ChevronDown className="select-icon" size={20} />
-            </div>
-          </div>
-
-          <div className="control-group">
-            <label>Number of Notes in Pattern</label>
-            <div className="slider-container">
-              <div className="slider-track">
-                <div className="slider-fill" style={{ width: `${((noteCount - 4) / (32 - 4)) * 100}%` }} />
-                <input
-                  type="range"
-                  min="4"
-                  max="32"
-                  value={noteCount}
-                  onChange={(e) => setNoteCount(e.target.value)}
-                  className="slider"
-                />
+          {/* Scale + Pattern */}
+          <div className="two-col">
+            <div className="control-group">
+              <label>Scale</label>
+              <div className="select-wrapper">
+                <select value={scale} onChange={e => setScale(e.target.value)} className="scale-select">
+                  {SCALES.map(s => <option key={s.value} value={s.value}>{s.label}</option>)}
+                </select>
+                <ChevronDown className="select-icon" size={20} />
               </div>
-              <span className="slider-value">{noteCount}</span>
+            </div>
+            <div className="control-group">
+              <label>Pattern</label>
+              <div className="select-wrapper">
+                <select value={pattern} onChange={e => setPattern(e.target.value)} className="scale-select">
+                  {PATTERNS.map(p => <option key={p.value} value={p.value}>{p.label}</option>)}
+                </select>
+                <ChevronDown className="select-icon" size={20} />
+              </div>
             </div>
           </div>
 
+          {/* Note count + Octave */}
+          <div className="two-col">
+            <div className="control-group">
+              <label>Notes in Pattern</label>
+              <div className="slider-container">
+                <div className="slider-track">
+                  <div className="slider-fill" style={{ width: `${((noteCount - 1) / (128 - 1)) * 100}%` }} />
+                  <input type="range" min="1" max="128" value={noteCount}
+                    onChange={e => setNoteCount(e.target.value)} className="slider" />
+                </div>
+                <span className="slider-value">{noteCount}</span>
+              </div>
+            </div>
+            <div className="control-group">
+              <label>Octave</label>
+              <div className="slider-container">
+                <div className="slider-track">
+                  <div className="slider-fill" style={{ width: `${(octave / 8) * 100}%` }} />
+                  <input type="range" min="0" max="8" value={octave}
+                    onChange={e => setOctave(e.target.value)} className="slider" />
+                </div>
+                <span className="slider-value">{octave}</span>
+              </div>
+            </div>
+          </div>
+
+          {/* Mood */}
           <div className="control-group">
-            <label>Mood-Based Keyword/Phrase</label>
+            <label>Mood Description</label>
             <textarea
               value={mood}
-              onChange={(e) => setMood(e.target.value)}
+              onChange={e => setMood(e.target.value)}
               placeholder="e.g., happy and energetic, calm and peaceful, dark and mysterious..."
               className="mood-textarea"
-              rows={4}
+              rows={3}
             />
           </div>
 
-          <button className="generate-btn" onClick={handleGenerate}>
-            <Sparkles size={20} />
-            Generate Arpeggio
+          {error && <div className="error-banner">{error}</div>}
+
+          <button className="generate-btn" onClick={handleGenerate} disabled={loading}>
+            {loading
+              ? <><span className="spinner" /> Generating…</>
+              : <><Sparkles size={20} /> Generate Arpeggio</>}
           </button>
         </div>
 
-        {/* Right Panel - Export and Preview */}
+        {/* ---- Right panel: Preview ---- */}
         <div className="panel preview-panel">
           <div className="panel-header">
             <span className="panel-icon">▶</span>
-            <h2>Export and Preview</h2>
+            <h2>Preview &amp; Export</h2>
           </div>
 
           <div className="visualization-section">
             <label>Pattern Sequence Visualization</label>
 
-            {hasGenerated ? (
+            {result ? (
               <>
+                {/* Pitch bar chart */}
                 <div className="bar-chart">
-                  {patternData.heights.map((height, index) => (
-                    <div key={index} className="bar-container">
+                  {displayNotes.map((note, i) => (
+                    <div key={i} className="bar-container">
                       <div
                         className="bar"
-                        style={{ height: `${height}%` }}
+                        style={{
+                          height: `${Math.max(8, ((note.pitch - minPitch) / pitchRange) * 85 + 8)}%`,
+                          opacity: 0.45 + (note.velocity / 127) * 0.55,
+                        }}
                       />
-                      <span className="bar-label">{patternData.notes[index]}</span>
+                      <span className="bar-label">{pitchToName(note.pitch)}</span>
                     </div>
                   ))}
                 </div>
 
-                <div className="waveform">
-                  <svg width="100%" height="100%" viewBox="0 0 400 60" preserveAspectRatio="none">
-                    <polyline
-                      points="0,30 40,25 80,35 120,20 160,40 200,15 240,38 280,22 320,33 360,28 400,30"
-                      fill="none"
-                      strokeWidth="2"
-                    />
-                  </svg>
-                </div>
-
+                {/* Stats */}
                 <div className="stats-grid">
                   <div className="stat-card">
-                    <div className="stat-label">Pattern Length</div>
-                    <div className="stat-value primary">{patternData.patternLength} notes</div>
+                    <div className="stat-label">Notes</div>
+                    <div className="stat-value primary">{result.note_count}</div>
                   </div>
                   <div className="stat-card">
                     <div className="stat-label">Note Range</div>
-                    <div className="stat-value">{patternData.noteRange}</div>
+                    <div className="stat-value">{noteRangeLabel}</div>
                   </div>
                   <div className="stat-card">
                     <div className="stat-label">Avg Velocity</div>
-                    <div className="stat-value">{patternData.avgVelocity}</div>
+                    <div className="stat-value">{avgVelocity}</div>
                   </div>
                   <div className="stat-card">
-                    <div className="stat-label">Tempo</div>
-                    <div className="stat-value">{tempo} BPM</div>
+                    <div className="stat-label">Duration</div>
+                    <div className="stat-value">{result.duration_seconds.toFixed(1)} s</div>
                   </div>
                 </div>
               </>
@@ -222,40 +391,40 @@ const Home = () => {
             )}
           </div>
 
+          {/* Instrument */}
           <div className="control-group">
             <label>Instrument Mode</label>
             <div className="instrument-grid">
-              {instruments.map((instrument) => (
+              {INSTRUMENTS.map(inst => (
                 <button
-                  key={instrument.name}
-                  className={`instrument-btn ${selectedInstrument === instrument.name ? 'selected' : ''}`}
-                  onClick={() => setSelectedInstrument(instrument.name)}
-                >
-                  <span className="instrument-icon">{instrument.icon}</span>
-                  {instrument.name}
+                  key={inst.name}
+                  className={`instrument-btn ${instrument === inst.name ? 'selected' : ''}`}
+                  onClick={() => setInstrument(inst.name)}>
+                  <span className="instrument-icon">{inst.icon}</span>
+                  {inst.name}
                 </button>
               ))}
             </div>
           </div>
 
+          {/* Actions */}
           <div className="action-buttons">
-            <button className="preview-btn">
-              <Play size={18} />
-              Preview
+            <button className="preview-btn" onClick={handlePlay} disabled={!result}>
+              {isPlaying
+                ? <><Square size={18} /> Stop</>
+                : <><Play  size={18} /> Play</>}
             </button>
-            <button className="export-btn">
-              <Download size={18} />
-              Export as MP4
-              <ChevronDown size={16} />
+            <button className="export-btn" onClick={handleDownload} disabled={!result}>
+              <Download size={18} /> Export MIDI
             </button>
           </div>
         </div>
       </main>
 
       <footer className="home-footer">
-        <div className="footer-text">© 2025 Arpeggiator.ai - Powered by AI</div>
+        <div className="footer-text">© 2025 Arpeggiator.ai — Powered by AI</div>
         <div className="footer-links">
-          <button className="footer-btn">☕ Buy me a coffee</button>
+          <button className="footer-btn">☕</button>
           <button className="footer-btn">in</button>
           <button className="footer-btn">🎵</button>
           <button className="footer-btn">✉</button>

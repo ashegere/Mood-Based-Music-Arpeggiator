@@ -592,6 +592,57 @@
   border-color: rgba(255, 255, 255, 0.2);
 }
 
+/* Two-column row inside a panel */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+/* Error banner */
+.error-banner {
+  padding: 12px 16px;
+  background: rgba(220, 38, 38, 0.15);
+  border: 1px solid rgba(220, 38, 38, 0.35);
+  border-radius: 8px;
+  color: #fca5a5;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+/* Disabled generate button */
+.generate-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Disabled action buttons */
+.preview-btn:disabled,
+.export-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+/* Loading spinner */
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.spinner {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  border-top-color: #ffffff;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
 /* Responsive */
 @media (max-width: 1200px) {
   .home-content {
@@ -618,5 +669,9 @@
 
   .key-grid {
     grid-template-columns: repeat(4, 1fr);
+  }
+
+  .two-col {
+    grid-template-columns: 1fr;
   }
 }
