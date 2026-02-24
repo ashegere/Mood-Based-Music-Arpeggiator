@@ -6,6 +6,7 @@ Startup loads the inference engine once; all requests share the singleton.
 
 import logging
 from contextlib import asynccontextmanager
+from pathlib import Path
 
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
@@ -35,8 +36,11 @@ async def lifespan(app: FastAPI):
         logger.warning("Database init skipped: %s", exc)
 
     try:
-        load_model()
-        logger.info("Inference engine loaded")
+        _base = Path(__file__).parent.parent   # backend/
+        checkpoint = _base / "checkpoints" / "best_model.pt"
+        dataset    = _base / "data" / "training" / "train_dataset.pt"
+        load_model(checkpoint, dataset_path=dataset if dataset.exists() else None)
+        logger.info("Inference engine loaded from %s", checkpoint)
     except Exception as exc:
         logger.error("Failed to load inference engine: %s", exc, exc_info=True)
 
