@@ -13,6 +13,7 @@ Pipeline per request:
 
 import base64
 import logging
+import random as _random
 from typing import Dict, List, Optional, Tuple
 
 from fastapi import APIRouter, HTTPException
@@ -120,6 +121,35 @@ _PATTERN_MAP: Dict[str, ArpeggioPattern] = {
     "descending": ArpeggioPattern.DESCENDING,
     "up_down":    ArpeggioPattern.UP_DOWN,
     "down_up":    ArpeggioPattern.DOWN_UP,
+}
+
+
+# ---------------------------------------------------------------------------
+# Mood → velocity profile  (base_velocity, variance)
+# Used to shape the base arpeggio when the model falls back.
+# Different moods produce audibly different dynamics even on the same pattern.
+# ---------------------------------------------------------------------------
+
+_MOOD_VELOCITY: Dict[int, tuple] = {
+    0:  (62, 12),  # melancholic  — soft, gentle
+    1:  (68, 10),  # dreamy       — quiet, smooth
+    2:  (98, 18),  # energetic    — loud, punchy
+    3:  (88, 22),  # tense        — mid-high, erratic
+    4:  (88, 14),  # happy        — bright, consistent
+    5:  (58, 10),  # sad          — very soft
+    6:  (64, 8),   # calm         — soft, even
+    7:  (78, 20),  # dark         — mid, uneven
+    8:  (92, 14),  # joyful       — bright, bouncy
+    9:  (90, 14),  # uplifting    — high, hopeful
+    10: (100, 20), # intense      — very loud, wide range
+    11: (62, 8),   # peaceful     — soft, very even
+    12: (94, 22),  # dramatic     — loud, very wide
+    13: (98, 18),  # epic         — very loud
+    14: (70, 20),  # mysterious   — mid, erratic
+    15: (76, 12),  # romantic     — mid-soft, smooth
+    16: (75, 14),  # neutral      — default mid
+    17: (72, 10),  # flowing      — soft-mid, smooth
+    18: (82, 24),  # ominous      — mid, very erratic
 }
 
 
@@ -327,13 +357,20 @@ async def generate_arpeggio(request: GenerateArpeggioRequest) -> GenerateArpeggi
         # 1. Mood resolution
         mood_label = _resolve_mood_label(request.mood)
 
-        # 2. Base arpeggio
+        # Per-request seed: use the caller's value when supplied; otherwise
+        # draw a fresh random seed so every generation is unique.
+        request_seed: int = (
+            request.seed if request.seed is not None
+            else _random.randint(0, 2_147_483_647)
+        )
+
+        # 2. Base arpeggio — always generates exactly note_count notes
         arpeggio = ArpeggioGenerator().generate(
             key=request.key,
             scale=request.scale,
             tempo=request.tempo,
             note_count=request.note_count,
-            seed=request.seed,
+            seed=request_seed,
             pattern=_PATTERN_MAP[request.pattern],
             octave=request.octave,
         )
@@ -344,22 +381,37 @@ async def generate_arpeggio(request: GenerateArpeggioRequest) -> GenerateArpeggi
         # 4. Inference — pass mood as int to use the 0-based label directly
         modified_ids = engine.run(tokens, mood_label)
 
-        # 5. Decode; fall back to base arpeggio when output is too sparse.
-        # The model is mood-conditioned but may not always produce coherent
-        # note sequences — treat anything below 30 % of the requested count
-        # as a failed inference and use the deterministic base arpeggio instead.
+        # 5. Decode model output.
+        # The model transforms token sequences; when it produces fewer notes
+        # than requested the output is musically incomplete, so we fall back
+        # to the base arpeggio and apply mood-driven velocity shaping instead.
+        # This guarantees:
+        #   a) note_count always equals request.note_count
+        #   b) every generation is unique (request_seed + mood velocity jitter)
+        #   c) different moods produce audibly different dynamics
         out_notes: List[Note] = []
         if modified_ids:
             out_notes = _tokens_to_notes(modified_ids, request.tempo)
 
-        min_acceptable = max(1, int(request.note_count * 0.30))
-        if len(out_notes) < min_acceptable:
-            logger.warning(
-                "Inference returned only %d note(s) for mood='%s' "
-                "(requested %d, threshold %d); falling back to base arpeggio",
-                len(out_notes), request.mood, request.note_count, min_acceptable,
+        if len(out_notes) < request.note_count:
+            logger.info(
+                "Inference returned %d/%d notes for mood='%s'; "
+                "applying mood velocity shaping to base arpeggio",
+                len(out_notes), request.note_count, request.mood,
             )
-            out_notes = list(arpeggio.notes)
+            base_vel, variance = _MOOD_VELOCITY.get(mood_label, (75, 15))
+            # Mix seed with mood so identical seeds with different moods
+            # still produce different velocity patterns.
+            rng = _random.Random(request_seed ^ (mood_label * 0x9E3779B9 & 0x7FFFFFFF))
+            out_notes = [
+                Note(
+                    pitch=n.pitch,
+                    velocity=max(40, min(115, base_vel + rng.randint(-variance, variance))),
+                    position=n.position,
+                    duration=n.duration,
+                )
+                for n in arpeggio.notes
+            ]
 
         # 6. Render → MIDI bytes
         midi_file = MIDIRenderer(enforce_scale=True).render_notes(
