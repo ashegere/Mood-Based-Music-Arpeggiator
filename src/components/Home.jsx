@@ -243,9 +243,6 @@ const Home = () => {
           <span>arpeggiator.ai</span>
         </div>
         <div className="home-nav">
-          <button className="nav-btn">
-            <Sparkles size={18} /> Build
-          </button>
           <button className="nav-btn" onClick={handleLogout}>
             <LogOut size={18} /> Log out
           </button>
