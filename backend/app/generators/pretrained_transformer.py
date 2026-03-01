@@ -26,7 +26,11 @@ Key features
 - Temperature + top-k sampling; both configurable at instantiation.
 - Scale-constrained PITCH sampling: out-of-scale pitches are suppressed
   with an additive -inf logit penalty before sampling.
-- No mood conditioning — planned for a future release.
+- Optional mood conditioning via a lightweight ``MoodConditioningModule``
+  adapter that can be loaded from a separate checkpoint.  Two injection
+  strategies are supported: ``"prepend"`` (mood as virtual first token)
+  and ``"bias"`` (mood vector added to all token embeddings).  The
+  backbone weights remain frozen; only the adapter is fine-tuned.
 """
 
 from __future__ import annotations
@@ -43,6 +47,82 @@ import torch
 import torch.nn as nn
 import torch.nn.functional as F
 from torch import Tensor
+
+# Imported lazily at first use (avoids circular import; mood_classifier
+# imports _SymbolicMusicTransformer only under TYPE_CHECKING).
+from app.generators.mood_classifier import MoodAlignmentScorer, ClassifierConfig
+
+# ---------------------------------------------------------------------------
+# Mood vocabulary — must match CustomTransformerGenerator ordering so that
+# label indices are consistent across both backends.
+# ---------------------------------------------------------------------------
+
+_VALID_MOODS: Tuple[str, ...] = (
+    "melancholic", "dreamy",    "energetic", "tense",   "happy",
+    "sad",         "calm",      "dark",      "joyful",  "uplifting",
+    "intense",     "peaceful",  "dramatic",  "epic",    "mysterious",
+    "romantic",    "neutral",   "flowing",   "ominous",
+)
+
+_MOOD_TO_LABEL: Dict[str, int] = {m: i for i, m in enumerate(_VALID_MOODS)}
+
+
+# ---------------------------------------------------------------------------
+# Mood adapter — lightweight module loaded separately from backbone
+# ---------------------------------------------------------------------------
+
+@dataclass
+class MoodAdapterConfig:
+    """
+    Configuration for a trained ``MoodConditioningModule``.
+
+    Stored alongside the adapter weights so the generator can reconstruct
+    the module without any external config file.
+
+    Attributes:
+        num_moods:           Number of mood categories (rows in the embedding).
+        d_model:             Must match the backbone's hidden dimension.
+        injection_method:    ``"prepend"`` or ``"bias"`` — injection strategy.
+        mood_names:          Ordered list of mood labels; index == label ID.
+        finetune_projection: Whether a fine-tuned projection head was saved
+                             alongside the adapter.  When ``True``, the
+                             checkpoint also contains
+                             ``projection_head_state_dict`` and
+                             ``projection_head_vocab_size``.
+    """
+    num_moods:           int
+    d_model:             int
+    injection_method:    str        # "prepend" | "bias"
+    mood_names:          List[str]  # index == label ID
+    finetune_projection: bool = False
+
+
+class MoodConditioningModule(nn.Module):
+    """
+    Learned mood embedding table.
+
+    Maps a batch of integer mood labels → d_model–dimensional vectors
+    that are injected into the backbone transformer at generation time.
+
+    Args:
+        num_moods: Number of mood categories.
+        d_model:   Hidden dimension; must match the backbone.
+    """
+
+    def __init__(self, num_moods: int, d_model: int) -> None:
+        super().__init__()
+        self.mood_embedding = nn.Embedding(num_moods, d_model)
+        nn.init.normal_(self.mood_embedding.weight, mean=0.0, std=0.02)
+
+    def forward(self, mood_indices: Tensor) -> Tensor:
+        """
+        Args:
+            mood_indices: ``(batch,)`` long tensor of label IDs.
+
+        Returns:
+            ``(batch, d_model)`` float tensor of mood vectors.
+        """
+        return self.mood_embedding(mood_indices)
 
 from app.generators.base import (
     BaseGenerator,
@@ -169,36 +249,94 @@ class _SymbolicMusicTransformer(nn.Module):
         # This halves parameter count and often improves language model quality.
         self.output_projection.weight = self.token_embedding.weight
 
-    def forward(self, input_ids: Tensor) -> Tensor:
+    def forward_hidden(
+        self,
+        input_ids: Tensor,
+        mood_vector: Optional[Tensor] = None,
+        injection_method: str = "prepend",
+    ) -> Tensor:
         """
-        Full sequence forward pass.
+        Forward pass returning pre-projection hidden states.
+
+        Identical to ``forward()`` but stops before ``output_projection``.
+        Used by the fine-tuner when a standalone (untied) projection head
+        replaces the backbone's weight-tied head, and by ``forward()``
+        itself to avoid code duplication.
 
         Args:
-            input_ids: ``(batch, seq_len)`` long tensor of token IDs.
+            input_ids:        ``(batch, seq_len)`` long tensor of token IDs.
+            mood_vector:      ``(batch, d_model)`` mood embedding, or ``None``.
+            injection_method: ``"prepend"`` or ``"bias"``.
 
         Returns:
-            Logits ``(batch, seq_len, vocab_size)``.
+            Hidden states ``(batch, out_len, d_model)`` after the final
+            LayerNorm but before the linear projection.
         """
         _, seq_len = input_ids.shape
 
-        # Clamp to max_seq_len (graceful handling of over-length inputs)
-        seq_len = min(seq_len, self.max_seq_len)
+        # When prepending, reserve one slot so total length ≤ max_seq_len.
+        reserve = 1 if (mood_vector is not None and injection_method == "prepend") else 0
+        seq_len = min(seq_len, self.max_seq_len - reserve)
         ids     = input_ids[:, :seq_len]
 
         positions = torch.arange(seq_len, device=ids.device).unsqueeze(0)  # (1, L)
-        x = self.token_embedding(ids) + self.pos_embedding(positions)
+        x = self.token_embedding(ids) + self.pos_embedding(positions)      # (B, L, d_model)
+
+        # Bias injection: shift all token embeddings by the mood vector.
+        if mood_vector is not None and injection_method == "bias":
+            x = x + mood_vector.unsqueeze(1)   # (B, 1, d_model) → broadcasts to (B, L, d_model)
+
         x = self.dropout(x)
+
+        # Prepend injection: insert mood as a virtual first "token" with no
+        # positional embedding (mood is position-invariant context).
+        if mood_vector is not None and injection_method == "prepend":
+            mood_tok = mood_vector.unsqueeze(1)          # (B, 1, d_model)
+            x        = torch.cat([mood_tok, x], dim=1)  # (B, L+1, d_model)
+
+        total_len = x.size(1)
 
         # Causal mask: upper triangle = -inf so each position attends only
         # to itself and previous positions.
         causal_mask = torch.triu(
-            torch.full((seq_len, seq_len), float("-inf"), device=ids.device),
+            torch.full((total_len, total_len), float("-inf"), device=ids.device),
             diagonal=1,
         )
 
         x = self.transformer_layers(x, mask=causal_mask)
-        x = self.output_norm(x)
-        return self.output_projection(x)
+        return self.output_norm(x)    # (B, out_len, d_model)
+
+    def forward(
+        self,
+        input_ids: Tensor,
+        mood_vector: Optional[Tensor] = None,
+        injection_method: str = "prepend",
+    ) -> Tensor:
+        """
+        Full sequence forward pass with optional mood conditioning.
+
+        Args:
+            input_ids:        ``(batch, seq_len)`` long tensor of token IDs.
+            mood_vector:      ``(batch, d_model)`` mood embedding from
+                              ``MoodConditioningModule``, or ``None`` for
+                              unconditional generation.
+            injection_method: How to inject the mood vector:
+
+                              ``"prepend"`` — prepend mood as a virtual
+                              token at position 0.  The output has length
+                              ``seq_len + 1``; position 0 predicts the
+                              first real token.
+
+                              ``"bias"`` — add mood vector to all token
+                              embeddings.  Output length equals ``seq_len``.
+
+        Returns:
+            Logits ``(batch, out_len, vocab_size)`` where ``out_len`` is
+            ``seq_len + 1`` for ``"prepend"`` and ``seq_len`` for ``"bias"``.
+        """
+        return self.output_projection(
+            self.forward_hidden(input_ids, mood_vector, injection_method)
+        )
 
 
 # ---------------------------------------------------------------------------
@@ -414,6 +552,11 @@ class PretrainedMusicTransformerGenerator(BaseGenerator):
                          independent of ``note_count``.  The effective
                          budget is ``max(max_gen_tokens, note_count * 8)``
                          to accommodate longer sequences automatically.
+        mood_adapter_path: Optional path to a ``mood_adapter.pt`` checkpoint
+                           produced by ``MoodFineTuner``.  When provided and
+                           the file exists, mood conditioning is active.
+                           If the file is absent, generation falls back to
+                           unconditional mode with a warning.
     """
 
     def __init__(
@@ -421,19 +564,43 @@ class PretrainedMusicTransformerGenerator(BaseGenerator):
         checkpoint_path: Union[str, Path],
         temperature: float = 0.95,
         top_k: int = 50,
+        top_p: float = 1.0,
+        repetition_penalty: float = 1.0,
         max_gen_tokens: int = 1024,
+        mood_adapter_path: Optional[Union[str, Path]] = None,
+        classifier_path: Optional[Union[str, Path]] = None,
+        alignment_threshold: float = 0.0,
+        alignment_max_attempts: int = 3,
     ) -> None:
-        self._checkpoint_path = Path(checkpoint_path)
-        self.temperature      = float(temperature)
-        self.top_k            = int(top_k)
-        self.max_gen_tokens   = int(max_gen_tokens)
+        self._checkpoint_path  = Path(checkpoint_path)
+        self.temperature       = float(temperature)
+        self.top_k             = int(top_k)
+        self.top_p             = float(top_p)
+        self.repetition_penalty = float(repetition_penalty)
+        self.max_gen_tokens    = int(max_gen_tokens)
+        self._mood_adapter_path = (
+            Path(mood_adapter_path) if mood_adapter_path is not None else None
+        )
+        # Alignment scorer config
+        self._classifier_path       = Path(classifier_path) if classifier_path else None
+        self._alignment_threshold   = float(alignment_threshold)
+        self._alignment_max_attempts = max(1, int(alignment_max_attempts))
 
-        self._model:  Optional[_SymbolicMusicTransformer] = None
-        self._device: Optional[torch.device]              = None
-        self._vocab:  Vocabulary                          = get_vocabulary()
-        self._tokenizer: Tokenizer                        = Tokenizer(self._vocab)
+        self._model:  Optional[_SymbolicMusicTransformer]  = None
+        self._device: Optional[torch.device]               = None
+        self._vocab:  Vocabulary                           = get_vocabulary()
+        self._tokenizer: Tokenizer                         = Tokenizer(self._vocab)
         self._lock    = threading.RLock()
         self._loaded: bool = False
+
+        # Mood adapter — populated by _load_mood_adapter() if path is given.
+        self._mood_adapter:        Optional[MoodConditioningModule] = None
+        self._mood_adapter_config: Optional[MoodAdapterConfig]      = None
+        # Optional fine-tuned projection head (untied from backbone embedding).
+        # Loaded from the adapter checkpoint when finetune_projection=True.
+        self._projection_head:     Optional[nn.Linear]              = None
+        # Alignment scorer — populated by _load_mood_classifier() if path given.
+        self._alignment_scorer:    Optional[MoodAlignmentScorer]    = None
 
     # ------------------------------------------------------------------
     # BaseGenerator interface
@@ -547,6 +714,185 @@ class PretrainedMusicTransformerGenerator(BaseGenerator):
                 self.top_k,
             )
 
+            # ---- Mood adapter (optional) ----
+            if self._mood_adapter_path is not None:
+                self._load_mood_adapter()
+
+            # ---- Alignment classifier (optional) ----
+            if self._classifier_path is not None:
+                self._load_mood_classifier()
+
+    # ------------------------------------------------------------------
+    # Mood adapter loading
+    # ------------------------------------------------------------------
+
+    def _load_mood_adapter(self) -> None:
+        """
+        Load a fine-tuned ``MoodConditioningModule`` from disk.
+
+        Called automatically by ``load()`` when ``mood_adapter_path`` is set.
+        Silently falls back to unconditional generation if the file is absent.
+
+        Raises:
+            RuntimeError: If the checkpoint format is unrecognised.
+        """
+        assert self._mood_adapter_path is not None
+        assert self._device is not None
+
+        if not self._mood_adapter_path.exists():
+            logger.warning(
+                "Mood adapter checkpoint not found: %s — "
+                "mood conditioning disabled (unconditional generation active).",
+                self._mood_adapter_path,
+            )
+            return
+
+        raw = torch.load(
+            self._mood_adapter_path,
+            map_location="cpu",
+            weights_only=False,
+        )
+
+        if "adapter_state_dict" not in raw or "config" not in raw:
+            raise RuntimeError(
+                f"Unrecognised mood adapter format in {self._mood_adapter_path}. "
+                "Expected {'adapter_state_dict': ..., 'config': {...}}."
+            )
+
+        cfg_dict = raw["config"]
+        config = MoodAdapterConfig(
+            num_moods=cfg_dict["num_moods"],
+            d_model=cfg_dict["d_model"],
+            injection_method=cfg_dict["injection_method"],
+            mood_names=list(cfg_dict["mood_names"]),
+            finetune_projection=cfg_dict.get("finetune_projection", False),
+        )
+
+        adapter = MoodConditioningModule(config.num_moods, config.d_model)
+        adapter.load_state_dict(raw["adapter_state_dict"])
+        adapter.to(self._device)
+        adapter.eval()
+
+        self._mood_adapter        = adapter
+        self._mood_adapter_config = config
+
+        # Restore fine-tuned projection head when the checkpoint includes one.
+        if raw.get("projection_head_state_dict") is not None:
+            vocab_size = raw["projection_head_vocab_size"]
+            proj = nn.Linear(config.d_model, vocab_size, bias=True)
+            proj.load_state_dict(raw["projection_head_state_dict"])
+            proj.to(self._device)
+            proj.eval()
+            self._projection_head = proj
+            logger.info(
+                "Fine-tuned projection head loaded | vocab=%d", vocab_size
+            )
+
+        logger.info(
+            "Mood adapter loaded | moods=%d d_model=%d injection=%s projection=%s",
+            config.num_moods,
+            config.d_model,
+            config.injection_method,
+            config.finetune_projection,
+        )
+
+    # ------------------------------------------------------------------
+    # Alignment classifier loading
+    # ------------------------------------------------------------------
+
+    def _load_mood_classifier(self) -> None:
+        """
+        Load a ``MoodAlignmentScorer`` from ``self._classifier_path``.
+
+        Called automatically by ``load()`` when ``classifier_path`` is set.
+        Falls back to disabled scoring (``self._alignment_scorer = None``)
+        if the file is absent, rather than raising an error, to allow the
+        service to start even while a classifier is being trained.
+
+        Raises:
+            RuntimeError: Checkpoint format is unrecognised.
+        """
+        assert self._classifier_path is not None
+        assert self._model is not None
+        assert self._device is not None
+
+        if not self._classifier_path.exists():
+            logger.warning(
+                "Mood classifier checkpoint not found: %s — "
+                "alignment scoring disabled.",
+                self._classifier_path,
+            )
+            return
+
+        self._alignment_scorer = MoodAlignmentScorer.load(
+            self._classifier_path,
+            backbone=self._model,
+            device=self._device,
+        )
+        logger.info(
+            "MoodAlignmentScorer ready | threshold=%.3f  max_attempts=%d",
+            self._alignment_threshold,
+            self._alignment_max_attempts,
+        )
+
+    # ------------------------------------------------------------------
+    # Mood label resolution
+    # ------------------------------------------------------------------
+
+    def _resolve_mood_label(self, mood: str) -> int:
+        """
+        Map a free-text mood string to an integer label ID.
+
+        Resolution order:
+        1. Exact match against ``mood_names`` (case-insensitive).
+        2. Substring match (mood contains a name or name contains mood).
+        3. Semantic nearest-neighbour via ``sentence-transformers``
+           (only if the library is installed).
+        4. Fallback: ``"neutral"`` label, or 0 if not found.
+
+        Args:
+            mood: Free-text mood description from the generation request.
+
+        Returns:
+            Integer label index for the loaded adapter's embedding table.
+        """
+        assert self._mood_adapter_config is not None
+        mood_names = self._mood_adapter_config.mood_names
+        mood_lower = mood.lower().strip()
+
+        # 1. Exact match
+        if mood_lower in mood_names:
+            return mood_names.index(mood_lower)
+
+        # 2. Substring / partial match
+        for i, name in enumerate(mood_names):
+            if name in mood_lower or mood_lower in name:
+                return i
+
+        # 3. Semantic nearest-neighbour (requires sentence-transformers)
+        try:
+            from app.mood.embeddings import SENTENCE_TRANSFORMERS_AVAILABLE
+            if SENTENCE_TRANSFORMERS_AVAILABLE:
+                from app.mood.embeddings import get_embedder
+                embedder     = get_embedder()
+                query_emb    = embedder.embed(mood_lower)
+                cand_embs    = embedder.embed_batch(mood_names)
+                sims         = torch.matmul(cand_embs, query_emb)
+                best         = int(sims.argmax().item())
+                logger.debug(
+                    "Mood '%s' → semantic match '%s' (label %d)",
+                    mood, mood_names[best], best,
+                )
+                return best
+        except Exception as exc:
+            logger.debug("Semantic mood resolution failed: %s", exc)
+
+        # 4. Fallback to "neutral" (or 0)
+        try:
+            return mood_names.index("neutral")
+        except ValueError:
+            return 0
+
     def generate(self, request: GenerationRequest) -> GenerationResult:
         """
         Full autoregressive generation pipeline.
@@ -565,14 +911,96 @@ class PretrainedMusicTransformerGenerator(BaseGenerator):
                 f"Generator '{self.name}' is not loaded. Call load() first."
             )
 
+        # ---- Resolve per-request sampling params (override instance defaults) ----
+        eff_temperature        = request.temperature        if request.temperature        is not None else self.temperature
+        eff_top_k              = request.top_k              if request.top_k              is not None else self.top_k
+        eff_top_p              = request.top_p              if request.top_p              is not None else self.top_p
+        eff_rep_penalty        = request.repetition_penalty if request.repetition_penalty is not None else self.repetition_penalty
+        eff_max_length         = request.max_length         if request.max_length         is not None else self.max_gen_tokens
+
+        # ---- Compute mood vector (None = unconditional) ----
+        mood_vector:      Optional[Tensor] = None
+        injection_method: str              = "prepend"
+
+        if self._mood_adapter is not None and self._mood_adapter_config is not None:
+            label_idx    = self._resolve_mood_label(request.mood)
+            label_tensor = torch.tensor(
+                [label_idx], dtype=torch.long, device=self._device
+            )
+            with torch.no_grad():
+                mood_vector = self._mood_adapter(label_tensor)   # (1, d_model)
+            injection_method = self._mood_adapter_config.injection_method
+            logger.debug(
+                "[%s] mood='%s' → label=%d ('%s') injection=%s",
+                self.name,
+                request.mood,
+                label_idx,
+                self._mood_adapter_config.mood_names[label_idx],
+                injection_method,
+            )
+
         # 1. Build structured prompt
         prompt_ids = self._build_prompt(request)
 
-        # 2. Autoregressive generation
-        token_stream = self._generate_autoregressive(prompt_ids, request)
+        # 2. Autoregressive generation — with optional alignment-scoring retry loop.
+        #
+        # Retry semantics:
+        #   - ``needs_scoring`` : scorer is loaded → compute score on every attempt.
+        #   - ``needs_retry``   : scorer loaded AND threshold > 0 → re-generate on
+        #                         low-scoring attempts, up to alignment_max_attempts.
+        #   - On each retry the temperature is nudged up by 0.05 (capped at 2.0) so
+        #     successive samples differ rather than repeating the same output.
+        #   - The attempt with the highest alignment score is kept regardless of
+        #     whether any attempt cleared the threshold.
+        needs_scoring = self._alignment_scorer is not None
+        needs_retry   = needs_scoring and self._alignment_threshold > 0.0
+        max_attempts  = self._alignment_max_attempts if needs_retry else 1
+
+        best_token_stream: List[int] = []
+        best_score:        float     = -1.0
+        alignment_score:   Optional[float] = None
+
+        for attempt in range(max_attempts):
+            # Small temperature nudge on retries promotes sample diversity.
+            attempt_temp = min(eff_temperature + attempt * 0.05, 2.0)
+
+            token_stream = self._generate_autoregressive(
+                prompt_ids, request, mood_vector, injection_method,
+                temperature=attempt_temp,
+                top_k=eff_top_k,
+                top_p=eff_top_p,
+                repetition_penalty=eff_rep_penalty,
+                token_budget=eff_max_length,
+            )
+
+            if needs_scoring:
+                score = self._alignment_scorer.score(token_stream, request.mood)
+                if score > best_score:
+                    best_score        = score
+                    best_token_stream = token_stream
+
+                if needs_retry:
+                    logger.debug(
+                        "[%s] attempt %d/%d alignment=%.3f threshold=%.2f",
+                        self.name, attempt + 1, max_attempts,
+                        score, self._alignment_threshold,
+                    )
+                    if score >= self._alignment_threshold:
+                        break  # Good enough — stop early.
+            else:
+                best_token_stream = token_stream
+                break
+
+        if needs_scoring:
+            alignment_score = best_score
+            if needs_retry:
+                logger.info(
+                    "[%s] Best alignment score=%.3f after %d attempt(s).",
+                    self.name, best_score, attempt + 1,
+                )
 
         # 3. Decode token stream → Note objects
-        notes = self._decode_token_stream(token_stream)
+        notes = self._decode_token_stream(best_token_stream)
 
         # 4. Fallback: pad with rule-based arpeggio if too few notes decoded
         if len(notes) < request.note_count:
@@ -621,6 +1049,14 @@ class PretrainedMusicTransformerGenerator(BaseGenerator):
             tempo=request.tempo,
             mood=request.mood,
             pattern_used="autoregressive",
+            sampling_params={
+                "temperature":        eff_temperature,
+                "top_k":              eff_top_k,
+                "top_p":              eff_top_p,
+                "repetition_penalty": eff_rep_penalty,
+                "max_length":         max(eff_max_length, request.note_count * 8),
+            },
+            alignment_score=alignment_score,
         )
         self._log_generation(request, result)
         return result
@@ -684,17 +1120,36 @@ class PretrainedMusicTransformerGenerator(BaseGenerator):
         self,
         prompt_ids: List[int],
         request: GenerationRequest,
+        mood_vector: Optional[Tensor] = None,
+        injection_method: str = "prepend",
+        *,
+        temperature: float,
+        top_k: int,
+        top_p: float,
+        repetition_penalty: float,
+        token_budget: int,
     ) -> List[int]:
         """
         Extend ``prompt_ids`` autoregressively until ``note_count`` notes
         are decoded, EOS is generated, or the token budget is exhausted.
 
         The scale-pitch mask is applied to logits whenever the state
-        machine expects a PITCH token next.
+        machine expects a PITCH token next.  Repetition penalty is applied
+        at every step to discourage pitch repetition.
 
         Args:
-            prompt_ids: Structured prompt (including BOS, seed note).
-            request:    Generation parameters.
+            prompt_ids:          Structured prompt (including BOS, seed note).
+            request:             Generation parameters.
+            mood_vector:         ``(1, d_model)`` mood embedding, or ``None``
+                                 for unconditional generation.
+            injection_method:    ``"prepend"`` or ``"bias"`` — forwarded to
+                                 ``_SymbolicMusicTransformer.forward()``.
+            temperature:         Sampling temperature for this call.
+            top_k:               Top-k filter width for this call (0 = off).
+            top_p:               Nucleus threshold for this call (1.0 = off).
+            repetition_penalty:  Pitch repetition penalty for this call.
+            token_budget:        Maximum new tokens to generate (adaptive
+                                 floor: max(budget, note_count × 8)).
 
         Returns:
             Full token ID list (prompt + generated), BOS stripped.
@@ -722,27 +1177,47 @@ class PretrainedMusicTransformerGenerator(BaseGenerator):
         token_ids: List[int]   = list(prompt_ids)
         max_seq_len: int       = self._model.max_seq_len
         # Adaptive budget: guarantee enough tokens for long sequences
-        token_budget: int      = max(self.max_gen_tokens, request.note_count * 8)
+        effective_budget: int  = max(token_budget, request.note_count * 8)
+
+        # When using prepend injection the forward pass is longer by 1, so
+        # we read logits from position -1 of the *output* (last position).
+        # This is unchanged from the unconditional case — the model always
+        # returns logits for every position including the prepended mood slot.
 
         with torch.no_grad():
-            for _ in range(token_budget):
+            for _ in range(effective_budget):
                 if state.notes_decoded >= request.note_count:
                     break
 
-                # Use the most recent `max_seq_len` tokens as context
-                context = token_ids[-max_seq_len:]
-                src     = torch.tensor(
+                # Use the most recent `max_seq_len` tokens as context.
+                # Reserve 1 slot for prepend so the total stays ≤ max_seq_len.
+                reserve  = 1 if (mood_vector is not None and injection_method == "prepend") else 0
+                context  = token_ids[-(max_seq_len - reserve):]
+                src      = torch.tensor(
                     [context], dtype=torch.long, device=self._device
                 )
 
-                logits     = self._model(src)       # (1, seq_len, vocab_size)
-                next_logits = logits[0, -1, :]      # (vocab_size,)
+                # Use the fine-tuned projection head when available;
+                # otherwise fall back to the backbone's weight-tied head.
+                if self._projection_head is not None:
+                    hidden      = self._model.forward_hidden(src, mood_vector, injection_method)
+                    logits      = self._projection_head(hidden)
+                else:
+                    logits      = self._model(src, mood_vector, injection_method)
+                next_logits = logits[0, -1, :]   # always take the last position
+
+                # Apply pitch repetition penalty before scale mask so the
+                # penalty is not double-applied on top of -inf scale suppression.
+                if repetition_penalty > 1.0:
+                    next_logits = self._apply_repetition_penalty(
+                        next_logits, token_ids, repetition_penalty
+                    )
 
                 # Apply scale constraint only when about to sample a pitch
                 if state.next_expected == _NextExpected.PITCH:
                     next_logits = next_logits + pitch_mask
 
-                next_id = self._sample(next_logits)
+                next_id = self._sample(next_logits, temperature, top_k, top_p)
 
                 if next_id in (eos_id, pad_id):
                     break
@@ -759,33 +1234,111 @@ class PretrainedMusicTransformerGenerator(BaseGenerator):
     # Sampling
     # ------------------------------------------------------------------
 
-    def _sample(self, logits: Tensor) -> int:
-        """
-        Sample the next token using temperature scaling and top-k filtering.
+    # ------------------------------------------------------------------
+    # Repetition penalty
+    # ------------------------------------------------------------------
 
-        - Temperature = 0 → greedy argmax (deterministic).
-        - Top-k = 0 → consider all tokens (pure temperature sampling).
-        - If the probability distribution collapses (all -inf after masking),
-          falls back to greedy argmax on the unmasked logits.
+    def _apply_repetition_penalty(
+        self,
+        logits: Tensor,
+        generated_ids: List[int],
+        penalty: float,
+        lookback: int = 64,
+    ) -> Tensor:
+        """
+        Apply a pitch-specific repetition penalty (CTRL-style).
+
+        Only ``PITCH_*`` tokens that appear in the last ``lookback`` positions
+        are penalised.  Structural tokens (BAR, POS, DUR, VEL) are left
+        untouched — they repeat by design and penalising them would break
+        the REMI grammar.
+
+        Formula (same as the original CTRL paper):
+            - logit > 0  →  logit / penalty   (push toward zero)
+            - logit ≤ 0  →  logit × penalty   (push further from zero)
 
         Args:
-            logits: Raw unnormalised logits ``(vocab_size,)``.
+            logits:        Raw logit tensor ``(vocab_size,)``; cloned in place.
+            generated_ids: All token IDs generated so far (prompt included).
+            penalty:       Penalty multiplier.  1.0 = no-op.
+            lookback:      How many recent tokens to scan for repeated pitches.
+
+        Returns:
+            Logit tensor with penalty applied (new tensor, original unchanged).
+        """
+        if abs(penalty - 1.0) < 1e-6:
+            return logits
+
+        vocab = self._vocab
+        recent_pitch_ids: Set[int] = set()
+        for tid in generated_ids[-lookback:]:
+            if vocab.decode(tid).startswith("PITCH_"):
+                recent_pitch_ids.add(tid)
+
+        if not recent_pitch_ids:
+            return logits
+
+        logits = logits.clone()
+        for tid in recent_pitch_ids:
+            if logits[tid] > 0:
+                logits[tid] = logits[tid] / penalty
+            else:
+                logits[tid] = logits[tid] * penalty
+
+        return logits
+
+    # ------------------------------------------------------------------
+    # Sampling
+    # ------------------------------------------------------------------
+
+    def _sample(
+        self,
+        logits: Tensor,
+        temperature: float,
+        top_k: int,
+        top_p: float,
+    ) -> int:
+        """
+        Sample the next token with temperature, top-k, and nucleus filtering.
+
+        Applied in order:
+
+        1. **Temperature scaling** — divides logits; lower = sharper.
+        2. **Top-k filtering** — zeroes all but the k highest-logit tokens.
+        3. **Softmax** — converts scaled logits to a probability distribution.
+        4. **Top-p (nucleus) filtering** — keeps the minimal set of tokens
+           whose cumulative probability ≥ top_p, zeroing the rest.
+        5. **Multinomial sample** — draws one token from the distribution.
+
+        Special cases:
+        - ``temperature ≤ 0`` → greedy argmax (deterministic).
+        - ``top_k = 0``       → no top-k filter (pure temperature / nucleus).
+        - ``top_p = 1.0``     → no nucleus filter.
+        - Collapse guard: if the distribution collapses to all-zero / NaN
+          (e.g. the scale mask wiped out all candidates), fall back to greedy
+          argmax on the *original* unmodified logits.
+
+        Args:
+            logits:      Raw unnormalised logits ``(vocab_size,)``.
+            temperature: Sampling temperature.
+            top_k:       Top-k filter width (0 = disabled).
+            top_p:       Nucleus threshold (1.0 = disabled).
 
         Returns:
             Sampled token ID.
         """
         # Greedy shortcut
-        if self.temperature <= 0.0:
+        if temperature <= 0.0:
             return int(logits.argmax().item())
 
-        scaled = logits / self.temperature
+        scaled = logits / temperature
 
-        # Top-k filtering: zero out all but the k highest logit tokens
-        if self.top_k > 0:
-            k             = min(self.top_k, scaled.size(-1))
-            top_vals, _   = torch.topk(scaled, k)
-            threshold     = top_vals[-1]
-            scaled        = torch.where(
+        # --- Top-k filtering ---
+        if top_k > 0:
+            k           = min(top_k, scaled.size(-1))
+            top_vals, _ = torch.topk(scaled, k)
+            threshold   = top_vals[-1]
+            scaled      = torch.where(
                 scaled < threshold,
                 torch.full_like(scaled, float("-inf")),
                 scaled,
@@ -793,8 +1346,19 @@ class PretrainedMusicTransformerGenerator(BaseGenerator):
 
         probs = F.softmax(scaled, dim=-1)
 
-        # Guard: if all probs are zero/nan (e.g. scale mask blocked everything),
-        # fall back to greedy argmax on the original logits.
+        # --- Top-p (nucleus) filtering ---
+        # Operates in probability space, after top-k has already narrowed
+        # the candidates.  Keeps the smallest prefix of the sorted
+        # distribution that accounts for at least top_p of the mass.
+        if 0.0 < top_p < 1.0:
+            sorted_probs, sorted_idx = torch.sort(probs, descending=True)
+            cumulative_probs         = torch.cumsum(sorted_probs, dim=-1)
+            # Shift by one so we always keep the token that first crosses top_p
+            remove                   = (cumulative_probs - sorted_probs) > top_p
+            sorted_probs[remove]     = 0.0
+            probs = torch.zeros_like(probs).scatter_(0, sorted_idx, sorted_probs)
+
+        # Collapse guard
         if not torch.isfinite(probs).any() or probs.sum() < 1e-9:
             return int(logits.argmax().item())
 

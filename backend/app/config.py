@@ -23,16 +23,34 @@ class Settings(BaseSettings):
     # CORS settings
     CORS_ORIGINS: List[str] = ["http://localhost:3000"]
 
-    # Model settings
-    USE_GPU: bool = False
-    MODEL_NAME: str = "gpt2"
-    MAX_PATTERN_LENGTH: int = 32
-
     # Music settings
     MIN_BPM: int = 40
     MAX_BPM: int = 240
     MIN_BARS: int = 1
     MAX_BARS: int = 8
+
+    # Generator — pretrained music transformer
+    # Override any of these in your .env file without touching source code.
+    PRETRAINED_CHECKPOINT: str = "checkpoints/pretrained_music_transformer.pt"
+    MOOD_ADAPTER_CHECKPOINT: str = "checkpoints/mood_adapter.pt"
+    # Fallback generator checkpoint (CustomTransformerGenerator / best_model.pt)
+    CUSTOM_CHECKPOINT: str = "checkpoints/best_model.pt"
+    # Sampling temperature: lower = more conservative, higher = more creative.
+    GENERATION_TEMPERATURE: float = 0.95
+    # Top-k filtering: 0 disables (pure temperature sampling).
+    GENERATION_TOP_K: int = 50
+    # Hard upper bound on generated tokens per request (auto-scaled by note_count).
+    GENERATION_MAX_GEN_TOKENS: int = 1024
+
+    # Mood alignment classifier
+    # Path to mood_classifier.pt (written by scripts/train_mood_classifier.py).
+    MOOD_CLASSIFIER_CHECKPOINT: str = "checkpoints/mood_classifier.pt"
+    # Minimum alignment score [0, 1] to accept a generation without retrying.
+    # Set to 0.0 (default) to score but never regenerate.
+    # Set > 0.0 (e.g. 0.5) to enable automatic re-generation on low-scoring outputs.
+    ALIGNMENT_SCORE_THRESHOLD: float = 0.0
+    # Maximum generation attempts when re-generation is enabled (threshold > 0).
+    ALIGNMENT_MAX_ATTEMPTS: int = 3
 
     class Config:
         env_file = ".env"

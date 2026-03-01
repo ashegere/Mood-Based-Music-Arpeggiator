@@ -15,7 +15,7 @@ from __future__ import annotations
 import logging
 from abc import ABC, abstractmethod
 from dataclasses import dataclass, field
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 logger = logging.getLogger(__name__)
 
@@ -37,6 +37,25 @@ class GenerationRequest:
     octave: int
     seed: Optional[int] = field(default=None)
     pattern: Optional[str] = field(default=None)
+    bars: int = field(default=1)
+
+    # ---- Per-request sampling overrides ---------------------------------
+    # ``None`` means "use the generator's instance-level default".
+    # When set, these take precedence over the values passed to __init__.
+    temperature: Optional[float] = field(default=None)
+    """Sampling temperature (0.01–2.0). Lower → more conservative."""
+
+    top_k: Optional[int] = field(default=None)
+    """Top-k filter width. 0 disables; keep only the k most likely tokens."""
+
+    top_p: Optional[float] = field(default=None)
+    """Nucleus sampling threshold (0 < top_p ≤ 1.0). 1.0 disables."""
+
+    repetition_penalty: Optional[float] = field(default=None)
+    """Pitch repetition penalty (≥ 1.0). 1.0 disables."""
+
+    max_length: Optional[int] = field(default=None)
+    """Maximum number of new tokens to generate (overrides instance default)."""
 
 
 @dataclass(frozen=True)
@@ -62,6 +81,14 @@ class GenerationResult:
     tempo: int
     mood: str
     pattern_used: str
+    # Actual sampling hyperparameters used for this generation call.
+    # Populated by PretrainedMusicTransformerGenerator; defaults to {} for
+    # backends that don't expose per-request sampling (backward-compatible).
+    sampling_params: Dict[str, Any] = field(default_factory=dict)
+    # Mood alignment score in [0, 1] from MoodAlignmentScorer, or None when
+    # the classifier checkpoint is not loaded.  Reflects the highest score
+    # achieved across all regeneration attempts.
+    alignment_score: Optional[float] = field(default=None)
 
 
 # ---------------------------------------------------------------------------

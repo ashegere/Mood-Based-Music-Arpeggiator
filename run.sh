@@ -4,7 +4,7 @@
 echo "🎵 Starting AI Arpeggiator..."
 
 # Check if we're in the right directory
-if [ ! -d "backend" ] || [ ! -d "frontend" ]; then
+if [ ! -d "backend" ] || [ ! -d "src" ]; then
     echo "❌ Error: Please run this script from the project root directory"
     exit 1
 fi
@@ -77,7 +77,7 @@ cd ..
 
 # Start frontend server
 echo "🎨 Starting frontend server on port 3000..."
-cd frontend
+cd src
 
 # Check if npm is available
 if command -v npm >/dev/null 2>&1; then

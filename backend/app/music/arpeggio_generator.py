@@ -424,8 +424,9 @@ def generate_pitch_sequence(
     """
     Generate a sequence of pitches following the specified pattern.
 
-    For deterministic output, this function uses a seeded RNG,
-    though the basic patterns don't require randomness.
+    The seeded RNG is used for a random starting position within the scale
+    and for occasional octave displacements, so different seeds always
+    produce different sequences even for the same key/scale/pattern.
 
     Args:
         scale_pitches: Available pitches from the scale.
@@ -440,45 +441,124 @@ def generate_pitch_sequence(
         return []
 
     n = len(scale_pitches)
+    # Random starting position so each seed produces a distinct sequence.
+    start = rng.randint(0, n - 1)
     pitches = []
 
     if pattern == ArpeggioPattern.ASCENDING:
-        # Simple ascending: cycle through scale pitches
         for i in range(note_count):
-            pitches.append(scale_pitches[i % n])
+            pitches.append(scale_pitches[(start + i) % n])
 
     elif pattern == ArpeggioPattern.DESCENDING:
-        # Simple descending: cycle through reversed scale
         reversed_pitches = list(reversed(scale_pitches))
         for i in range(note_count):
-            pitches.append(reversed_pitches[i % n])
+            pitches.append(reversed_pitches[(start + i) % n])
 
     elif pattern == ArpeggioPattern.UP_DOWN:
-        # Ascending then descending, creating a wave pattern
-        # Pattern: 0,1,2,...,n-1,n-2,...,1,0,1,2,...
         cycle_length = max(1, 2 * n - 2) if n > 1 else 1
         for i in range(note_count):
-            pos = i % cycle_length
+            pos = (start + i) % cycle_length
             if pos < n:
                 pitches.append(scale_pitches[pos])
             else:
-                # Descending part: n-1 down to 1 (skip endpoints to avoid repeats)
                 desc_pos = cycle_length - pos
-                pitches.append(scale_pitches[desc_pos])
+                pitches.append(scale_pitches[max(0, min(n - 1, desc_pos))])
 
     elif pattern == ArpeggioPattern.DOWN_UP:
-        # Descending then ascending
         reversed_pitches = list(reversed(scale_pitches))
         cycle_length = max(1, 2 * n - 2) if n > 1 else 1
         for i in range(note_count):
-            pos = i % cycle_length
+            pos = (start + i) % cycle_length
             if pos < n:
                 pitches.append(reversed_pitches[pos])
             else:
                 desc_pos = cycle_length - pos
-                pitches.append(reversed_pitches[desc_pos])
+                pitches.append(reversed_pitches[max(0, min(n - 1, desc_pos))])
 
-    return pitches
+    # Occasional octave displacement: 15% chance per note to shift ±12 semitones.
+    # Stays within valid MIDI range and preserves scale identity.
+    result = []
+    for p in pitches:
+        if rng.random() < 0.15:
+            shift = rng.choice([-12, 12])
+            new_p = p + shift
+            if MIN_PITCH <= new_p <= MAX_PITCH:
+                p = new_p
+        result.append(p)
+    return result
+
+
+def generate_mood_pitch_sequence(
+    scale_pitches: List[int],
+    note_count: int,
+    rng: random.Random,
+    step_weights: List[float],
+    octave_jump_prob: float,
+    contour_bias: float,
+    start_region: str,
+) -> List[int]:
+    """
+    Generate a melodic pitch sequence using a mood-driven random walk.
+
+    At each step the walk randomly moves −2, −1, +1, or +2 scale degrees,
+    with weights tuned per mood.  A contour bias nudges the walk toward
+    ascending or descending motion.  Occasional octave displacements add
+    register variety without leaving the key.
+
+    Args:
+        scale_pitches:    Available pitches sorted ascending.
+        note_count:       Number of pitches to generate.
+        rng:              Seeded RNG — same seed always reproduces same output.
+        step_weights:     Weights for steps [−2, −1, +1, +2] through the
+                          scale-degree index.
+        octave_jump_prob: Per-note probability [0, 1] of an octave shift.
+        contour_bias:     Directional bias in [−1, 1].  −1 = fully descending,
+                          +1 = fully ascending, 0 = neutral.
+        start_region:     "low", "mid", or "high" — starting register.
+
+    Returns:
+        List of MIDI pitch values within [MIN_PITCH, MAX_PITCH].
+    """
+    n = len(scale_pitches)
+    if n == 0:
+        return []
+
+    # Starting index based on the requested register.
+    if start_region == "low":
+        idx = rng.randint(0, max(0, n // 3))
+    elif start_region == "high":
+        idx = rng.randint(min(2 * n // 3, n - 1), n - 1)
+    else:  # "mid"
+        idx = rng.randint(n // 4, min(3 * n // 4, n - 1))
+
+    steps = [-2, -1, +1, +2]
+    result: List[int] = []
+
+    for _ in range(note_count):
+        idx = max(0, min(n - 1, idx))
+        pitch = scale_pitches[idx]
+
+        # Occasional octave displacement — same scale class, different register.
+        if rng.random() < octave_jump_prob:
+            shift = rng.choice([-12, 12])
+            shifted = pitch + shift
+            if MIN_PITCH <= shifted <= MAX_PITCH:
+                pitch = shifted
+
+        result.append(pitch)
+
+        # Weighted random step with optional contour bias.
+        w = list(step_weights)
+        if contour_bias > 0:           # nudge ascending
+            w[2] *= 1.0 + contour_bias
+            w[3] *= 1.0 + contour_bias * 0.5
+        elif contour_bias < 0:         # nudge descending
+            w[0] *= 1.0 - contour_bias   # bias is negative → increases weight
+            w[1] *= 1.0 - contour_bias * 0.5
+        step = rng.choices(steps, weights=w)[0]
+        idx += step
+
+    return result
 
 
 # =============================================================================

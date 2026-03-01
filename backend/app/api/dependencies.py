@@ -15,9 +15,9 @@ Usage in route handlers:
 Startup wiring (call once from ``app.main`` lifespan):
 
     from app.api.dependencies import set_generator
-    from app.generators.transformer import CustomTransformerGenerator
+    from app.generators.pretrained_transformer import PretrainedMusicTransformerGenerator
 
-    generator = CustomTransformerGenerator(checkpoint_path=...)
+    generator = PretrainedMusicTransformerGenerator(checkpoint_path=...)
     generator.load()
     set_generator(generator)
 """

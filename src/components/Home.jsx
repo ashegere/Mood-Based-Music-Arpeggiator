@@ -59,6 +59,7 @@ const Home = () => {
   const [selectedKey,setSelectedKey]= useState('C');
   const [scale,      setScale]      = useState('major');
   const [noteCount,  setNoteCount]  = useState(16);
+  const [bars,       setBars]       = useState(1);
   const [mood,       setMood]       = useState('');
   const [octave,     setOctave]     = useState(4);
   const [instrument, setInstrument] = useState('Piano');
@@ -72,6 +73,8 @@ const Home = () => {
   // Audio refs
   const audioCtxRef   = useRef(null);
   const oscillatorsRef= useRef([]);
+  const rafRef        = useRef(null);
+  const [activeNoteIdx, setActiveNoteIdx] = useState(-1);
 
   useEffect(() => {
     if (!localStorage.getItem('token')) navigate('/');
@@ -91,6 +94,7 @@ const Home = () => {
         scale,
         tempo:      parseInt(tempo),
         note_count: parseInt(noteCount),
+        bars:       parseInt(bars),
         mood:       mood.trim(),
         octave:     parseInt(octave),
       });
@@ -105,6 +109,7 @@ const Home = () => {
   // ---- Audio playback -----------------------------------------------------
 
   const stopPlayback = () => {
+    if (rafRef.current) { cancelAnimationFrame(rafRef.current); rafRef.current = null; }
     oscillatorsRef.current.forEach(osc => { try { osc.stop(0); } catch {} });
     oscillatorsRef.current = [];
     if (audioCtxRef.current) {
@@ -112,21 +117,29 @@ const Home = () => {
       audioCtxRef.current = null;
     }
     setIsPlaying(false);
+    setActiveNoteIdx(-1);
   };
 
   const handlePlay = () => {
+    // Stop is a clean stop; Play always resets to position 0
     if (isPlaying) { stopPlayback(); return; }
     if (!result)   return;
+
+    // Tear down any lingering state before starting fresh
+    stopPlayback();
 
     const ctx = new AudioContext();
     audioCtxRef.current = ctx;
 
     const waveform       = WAVEFORMS[instrument] || 'sine';
     const secondsPerBeat = 60 / result.tempo;
-    const now            = ctx.currentTime + 0.05;
+    const startTime      = ctx.currentTime + 0.05;   // absolute t=0 for this playback
+
+    // Capture displayNotes snapshot for the tracker closure
+    const trackerNotes = displayNotes;
 
     const oscs = result.notes.map(note => {
-      const start    = now + note.position * secondsPerBeat;
+      const start    = startTime + note.position * secondsPerBeat;
       const dur      = Math.max(0.05, note.duration * secondsPerBeat);
       const freq     = midiToFreq(note.pitch);
       const peakGain = (note.velocity / 127) * 0.25;
@@ -134,8 +147,8 @@ const Home = () => {
       const osc  = ctx.createOscillator();
       const gain = ctx.createGain();
 
-      osc.type           = waveform;
-      osc.frequency.value= freq;
+      osc.type            = waveform;
+      osc.frequency.value = freq;
       osc.connect(gain);
       gain.connect(ctx.destination);
 
@@ -151,6 +164,23 @@ const Home = () => {
 
     oscillatorsRef.current = oscs;
     setIsPlaying(true);
+
+    // --- Tracker: highlight active bar via requestAnimationFrame ---
+    const tick = () => {
+      if (!audioCtxRef.current) return;
+      const elapsedBeats = (audioCtxRef.current.currentTime - startTime) / secondsPerBeat;
+      let active = -1;
+      for (let i = 0; i < trackerNotes.length; i++) {
+        const n = trackerNotes[i];
+        if (elapsedBeats >= n.position && elapsedBeats < n.position + n.duration) {
+          active = i;
+          break;
+        }
+      }
+      setActiveNoteIdx(active);
+      rafRef.current = requestAnimationFrame(tick);
+    };
+    rafRef.current = requestAnimationFrame(tick);
 
     // Auto-stop when sequence ends
     setTimeout(stopPlayback, (result.duration_seconds + 0.5) * 1000);
@@ -268,15 +298,15 @@ const Home = () => {
             </div>
           </div>
 
-          {/* Note count + Octave */}
+          {/* Notes + Octave */}
           <div className="two-col">
             <div className="control-group">
               <label>Notes in Pattern</label>
               <div className="slider-container">
                 <div className="slider-track">
-                  <div className="slider-fill" style={{ width: `${((noteCount - 1) / (128 - 1)) * 100}%` }} />
-                  <input type="range" min="1" max="128" value={noteCount}
-                    onChange={e => setNoteCount(e.target.value)} className="slider" />
+                  <div className="slider-fill" style={{ width: `${((noteCount - 4) / (32 - 4)) * 100}%` }} />
+                  <input type="range" min="4" max="32" step="1" value={noteCount}
+                    onChange={e => setNoteCount(parseInt(e.target.value))} className="slider" />
                 </div>
                 <span className="slider-value">{noteCount}</span>
               </div>
@@ -291,6 +321,19 @@ const Home = () => {
                 </div>
                 <span className="slider-value">{octave}</span>
               </div>
+            </div>
+          </div>
+
+          {/* Bars (repetitions) */}
+          <div className="control-group">
+            <label>Bars <span style={{ fontWeight: 400, opacity: 0.6 }}>({bars} × {noteCount} = {bars * noteCount} notes total)</span></label>
+            <div className="slider-container">
+              <div className="slider-track">
+                <div className="slider-fill" style={{ width: `${((bars - 1) / (8 - 1)) * 100}%` }} />
+                <input type="range" min="1" max="8" step="1" value={bars}
+                  onChange={e => setBars(parseInt(e.target.value))} className="slider" />
+              </div>
+              <span className="slider-value">{bars}</span>
             </div>
           </div>
 
@@ -327,20 +370,25 @@ const Home = () => {
 
             {result ? (
               <>
-                {/* Pitch bar chart */}
-                <div className="bar-chart">
-                  {displayNotes.map((note, i) => (
-                    <div key={i} className="bar-container">
-                      <div
-                        className="bar"
-                        style={{
-                          height: `${Math.max(8, ((note.pitch - minPitch) / pitchRange) * 85 + 8)}%`,
-                          opacity: 0.45 + (note.velocity / 127) * 0.55,
-                        }}
-                      />
-                      <span className="bar-label">{pitchToName(note.pitch)}</span>
-                    </div>
-                  ))}
+                {/* Pitch bar chart with tracker */}
+                <div className={`bar-chart${isPlaying ? ' playing' : ''}`}>
+                  {displayNotes.map((note, i) => {
+                    const isActive = activeNoteIdx === i;
+                    return (
+                      <div key={i} className={`bar-container${isActive ? ' bar-container-active' : ''}`}>
+                        <div
+                          className={`bar${isActive ? ' bar-active' : ''}`}
+                          style={{
+                            height: `${Math.max(8, ((note.pitch - minPitch) / pitchRange) * 85 + 8)}%`,
+                            opacity: isPlaying && !isActive ? 0.25 : 0.45 + (note.velocity / 127) * 0.55,
+                          }}
+                        />
+                        <span className={`bar-label${isActive ? ' bar-label-active' : ''}`}>
+                          {pitchToName(note.pitch)}
+                        </span>
+                      </div>
+                    );
+                  })}
                 </div>
 
                 {/* Stats */}

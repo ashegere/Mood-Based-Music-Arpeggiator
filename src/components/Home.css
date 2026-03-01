@@ -383,6 +383,37 @@
   font-size: 11px;
   color: rgba(255, 255, 255, 0.5);
   margin-top: auto;
+  transition: color 0.08s;
+}
+
+/* Tracker: active note */
+.bar.bar-active {
+  background: linear-gradient(180deg, #ffffff 0%, #ff6b00 55%, #ff8c3a 100%);
+  box-shadow:
+    0 0 8px rgba(255, 255, 255, 0.7),
+    0 0 20px rgba(255, 107, 0, 0.6);
+  opacity: 1 !important;
+  transition: none;
+}
+
+.bar-container-active .bar-label,
+.bar-label-active {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* Subtle column highlight behind the active bar */
+.bar-container-active {
+  position: relative;
+}
+
+.bar-container-active::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 107, 0, 0.08);
+  border-radius: 3px;
+  pointer-events: none;
 }
 
 .waveform {

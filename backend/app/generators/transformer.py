@@ -20,7 +20,7 @@ from __future__ import annotations
 import logging
 import random as _random
 from pathlib import Path
-from typing import Dict, List, Optional, Tuple, Union
+from typing import Dict, List, NamedTuple, Optional, Tuple, Union
 
 from app.generators.base import (
     BaseGenerator,
@@ -29,7 +29,14 @@ from app.generators.base import (
     NoteResult,
 )
 from app.model.inference import InferenceEngine
-from app.music.arpeggio_generator import Arpeggio, ArpeggioGenerator, ArpeggioPattern, Note
+from app.music.arpeggio_generator import (
+    Arpeggio,
+    ArpeggioGenerator,
+    ArpeggioPattern,
+    Note,
+    build_scale_pitches,
+    generate_mood_pitch_sequence,
+)
 from app.music.midi_renderer import MIDIRenderer, midi_to_bytes
 
 logger = logging.getLogger(__name__)
@@ -160,6 +167,45 @@ _PATTERN_NAMES: Dict[ArpeggioPattern, str] = {v: k for k, v in _PATTERN_MAP.item
 
 
 # ---------------------------------------------------------------------------
+# Mood-driven generation parameters (Option C)
+# ---------------------------------------------------------------------------
+
+class _MoodGenParams(NamedTuple):
+    """Per-mood parameters for the pitch-and-rhythm generator."""
+    step_weights: Tuple[float, float, float, float]  # weights for [-2,-1,+1,+2]
+    octave_jump_prob: float    # per-note probability of ±octave displacement
+    contour_bias: float        # -1 (descending) … +1 (ascending)
+    start_region: str          # "low" | "mid" | "high"
+    rhythm_pattern: Tuple[float, ...]  # cycling note durations in beats
+    num_octaves: int           # scale span passed to build_scale_pitches
+
+
+# Indices match _VALID_MOODS (0 = melancholic … 18 = ominous).
+# step_weights = [w_-2, w_-1, w_+1, w_+2]
+_MOOD_GEN_PARAMS: Dict[int, _MoodGenParams] = {
+    0:  _MoodGenParams((2, 4, 3, 1), 0.06, -0.30, "mid",  (1.0, 0.5, 0.5, 1.0, 0.5),          2),  # melancholic
+    1:  _MoodGenParams((1, 2, 3, 2), 0.12,  0.10, "mid",  (0.5, 0.25, 0.25, 0.5, 1.0),         2),  # dreamy
+    2:  _MoodGenParams((1, 2, 3, 4), 0.22,  0.40, "high", (0.25, 0.25, 0.5, 0.25, 0.25, 0.5),  2),  # energetic
+    3:  _MoodGenParams((2, 3, 3, 2), 0.18, -0.10, "mid",  (0.25, 0.5, 0.25, 0.75, 0.25),       2),  # tense
+    4:  _MoodGenParams((1, 2, 4, 3), 0.15,  0.30, "mid",  (0.5, 0.25, 0.25, 0.5, 0.5),         2),  # happy
+    5:  _MoodGenParams((3, 4, 2, 1), 0.05, -0.40, "low",  (1.0, 1.0, 0.5, 0.5, 1.5),           2),  # sad
+    6:  _MoodGenParams((1, 3, 3, 1), 0.05,  0.00, "mid",  (1.0, 0.5, 1.0, 0.5, 1.0),           2),  # calm
+    7:  _MoodGenParams((2, 3, 2, 1), 0.10, -0.20, "low",  (0.5, 0.5, 1.0, 0.5, 0.5),           2),  # dark
+    8:  _MoodGenParams((1, 2, 3, 4), 0.20,  0.30, "mid",  (0.25, 0.25, 0.25, 0.5, 0.25),       2),  # joyful
+    9:  _MoodGenParams((1, 2, 4, 3), 0.15,  0.50, "mid",  (0.5, 0.5, 0.25, 0.25, 1.0),         2),  # uplifting
+    10: _MoodGenParams((2, 2, 3, 3), 0.28,  0.20, "high", (0.25, 0.25, 0.25, 0.25, 0.5),       3),  # intense
+    11: _MoodGenParams((1, 3, 3, 1), 0.05,  0.00, "mid",  (1.0, 0.5, 1.0, 1.0, 0.5),           2),  # peaceful
+    12: _MoodGenParams((1, 2, 3, 4), 0.22, -0.10, "low",  (0.5, 0.25, 0.75, 1.0, 0.5),         3),  # dramatic
+    13: _MoodGenParams((1, 2, 3, 4), 0.28,  0.40, "mid",  (1.0, 0.5, 0.5, 2.0, 1.0),           3),  # epic
+    14: _MoodGenParams((3, 3, 2, 2), 0.15, -0.10, "mid",  (0.5, 0.75, 0.25, 0.5, 0.75),        2),  # mysterious
+    15: _MoodGenParams((1, 2, 3, 2), 0.10,  0.10, "mid",  (0.5, 1.0, 0.5, 0.5, 1.0),           2),  # romantic
+    16: _MoodGenParams((2, 2, 2, 2), 0.10,  0.00, "mid",  (0.5, 0.5, 0.5, 0.5, 0.5),           2),  # neutral
+    17: _MoodGenParams((1, 2, 3, 2), 0.10,  0.10, "mid",  (0.5, 0.25, 0.25, 0.5, 0.25, 0.25),  2),  # flowing
+    18: _MoodGenParams((3, 3, 2, 2), 0.15, -0.30, "low",  (0.5, 0.5, 1.0, 0.75, 0.5),          2),  # ominous
+}
+
+
+# ---------------------------------------------------------------------------
 # Mood → velocity profile  (base_velocity, variance)
 # ---------------------------------------------------------------------------
 
@@ -241,76 +287,85 @@ class CustomTransformerGenerator(BaseGenerator):
 
     def generate(self, request: GenerationRequest) -> GenerationResult:
         """
-        Full generation pipeline:
+        Mood-driven generation pipeline:
 
         1. Resolve mood text → 0-based label.
-        2. Select arpeggio pattern (from request or mood-driven random choice).
-        3. Generate rule-based base arpeggio (always ``note_count`` notes).
-        4. Serialise arpeggio → 411-token MIDI event sequence.
-        5. Run transformer inference.
-        6. Decode tokens → notes; fall back to mood-velocity-shaped base
-           arpeggio when the model returns fewer notes than requested.
-        7. Render notes → MIDI bytes.
-        8. Return ``GenerationResult``.
+        2. Look up per-mood generation parameters (step weights, rhythm,
+           contour bias, octave span, register).
+        3. Build the full scale-pitch pool for the requested key/scale.
+        4. Run a seeded random walk through the scale pool, shaped by the
+           mood parameters, to produce ``note_count`` pitches.
+        5. Apply mood-matched rhythm patterns and velocity dynamics.
+        6. Render to MIDI and return ``GenerationResult``.
         """
         if not self.is_ready:
             raise RuntimeError(
                 f"Generator '{self.name}' is not loaded. Call load() first."
             )
 
-        # 1. Mood resolution
+        # 1. Mood resolution.
         mood_label = self._resolve_mood_label(request.mood)
 
-        # Per-request seed: caller's value when supplied, else fresh random.
+        # Per-request seed: caller's value for reproducibility, else random.
         seed: int = (
             request.seed
             if request.seed is not None
             else _random.randint(0, 2_147_483_647)
         )
 
-        # 2. Pattern selection
+        # Pattern kept for metadata; actual pitches come from the mood walk.
         if request.pattern is not None:
             chosen_pattern = _PATTERN_MAP[request.pattern]
         else:
             chosen_pattern = self._resolve_pattern(mood_label, seed)
 
-        # 3. Base arpeggio — always generates exactly note_count notes
-        arpeggio = ArpeggioGenerator().generate(
-            key=request.key,
-            scale=request.scale,
-            tempo=request.tempo,
+        # 2. Per-mood generation parameters.
+        params = _MOOD_GEN_PARAMS.get(mood_label, _MOOD_GEN_PARAMS[16])
+
+        # 3. Scale pitch pool.
+        scale_pitches = build_scale_pitches(
+            request.key, request.scale, request.octave,
+            num_octaves=params.num_octaves,
+        )
+        if not scale_pitches:
+            # Degenerate fallback: widen to 2 octaves.
+            scale_pitches = build_scale_pitches(
+                request.key, request.scale, request.octave, num_octaves=2
+            )
+
+        # 4. Mood-driven pitch walk.
+        pitches = generate_mood_pitch_sequence(
+            scale_pitches=scale_pitches,
             note_count=request.note_count,
-            seed=seed,
-            pattern=chosen_pattern,
-            octave=request.octave,
+            rng=_random.Random(seed),
+            step_weights=list(params.step_weights),
+            octave_jump_prob=params.octave_jump_prob,
+            contour_bias=params.contour_bias,
+            start_region=params.start_region,
         )
 
-        # 4. Tokenise
-        tokens = self._arpeggio_to_tokens(arpeggio, mood_label)
+        # 5. Build notes with mood rhythm + velocity.
+        out_notes = self._build_mood_notes(
+            pitches, params.rhythm_pattern, mood_label, seed
+        )
 
-        # 5. Transformer inference
-        modified_ids = self._engine.run(tokens, mood_label)
+        # 5b. Tile the pattern across the requested number of bars.
+        if request.bars > 1 and out_notes:
+            pattern_duration = max(n.position + n.duration for n in out_notes)
+            tiled: List[Note] = list(out_notes)
+            for b in range(1, request.bars):
+                offset = pattern_duration * b
+                for n in out_notes:
+                    tiled.append(Note(
+                        pitch=n.pitch,
+                        velocity=n.velocity,
+                        position=n.position + offset,
+                        duration=n.duration,
+                    ))
+            out_notes = tiled
 
-        # 6. Decode output; fall back when model returns too few notes
-        out_notes: List[Note] = []
-        if modified_ids:
-            out_notes = self._tokens_to_notes(modified_ids, request.tempo)
-
-        if len(out_notes) < request.note_count:
-            logger.info(
-                "[%s] Inference returned %d/%d notes (mood=%r); "
-                "applying mood-velocity fallback to base arpeggio",
-                self.name,
-                len(out_notes),
-                request.note_count,
-                request.mood,
-            )
-            out_notes = self._apply_mood_velocity(
-                arpeggio.notes, mood_label, seed
-            )
-
-        # 7. MIDI render
-        midi_file  = MIDIRenderer(enforce_scale=True).render_notes(
+        # 6. MIDI render.
+        midi_file = MIDIRenderer(enforce_scale=True).render_notes(
             notes=out_notes,
             tempo=request.tempo,
             key=request.key,
@@ -318,7 +373,6 @@ class CustomTransformerGenerator(BaseGenerator):
         )
         midi_bytes = midi_to_bytes(midi_file)
 
-        # 8. Build result
         note_results = [
             NoteResult(
                 pitch=n.pitch,
@@ -329,10 +383,10 @@ class CustomTransformerGenerator(BaseGenerator):
             for n in out_notes
         ]
 
-        seconds_per_beat  = 60.0 / max(request.tempo, 1)
-        last              = max(out_notes, key=lambda n: n.position + n.duration)
-        duration_seconds  = round((last.position + last.duration) * seconds_per_beat, 3)
-        pattern_used      = _PATTERN_NAMES.get(chosen_pattern, "unknown")
+        seconds_per_beat = 60.0 / max(request.tempo, 1)
+        last = max(out_notes, key=lambda n: n.position + n.duration)
+        duration_seconds = round((last.position + last.duration) * seconds_per_beat, 3)
+        pattern_used = _PATTERN_NAMES.get(chosen_pattern, "unknown")
 
         result = GenerationResult(
             midi_bytes=midi_bytes,
@@ -347,6 +401,40 @@ class CustomTransformerGenerator(BaseGenerator):
         )
         self._log_generation(request, result)
         return result
+
+    # ------------------------------------------------------------------
+    # Mood note builder
+    # ------------------------------------------------------------------
+
+    @staticmethod
+    def _build_mood_notes(
+        pitches: List[int],
+        rhythm_pattern: Tuple[float, ...],
+        mood_label: int,
+        seed: int,
+    ) -> List[Note]:
+        """
+        Combine a pitch sequence with mood-driven rhythm and velocity.
+
+        Args:
+            pitches:        MIDI pitch values (one per note).
+            rhythm_pattern: Cycling note durations in beats.
+            mood_label:     0-based mood index for velocity profile.
+            seed:           RNG seed (XOR-mixed to decouple from pitch seed).
+
+        Returns:
+            Fully populated Note objects in ascending time order.
+        """
+        base_vel, variance = _MOOD_VELOCITY.get(mood_label, (75, 15))
+        vel_rng = _random.Random(seed ^ 0xC0FFEE)
+        notes: List[Note] = []
+        pos = 0.0
+        for i, pitch in enumerate(pitches):
+            dur = rhythm_pattern[i % len(rhythm_pattern)]
+            vel = max(40, min(115, base_vel + vel_rng.randint(-variance, variance)))
+            notes.append(Note(pitch=pitch, duration=dur, velocity=vel, position=pos))
+            pos += dur
+        return notes
 
     # ------------------------------------------------------------------
     # Mood resolution

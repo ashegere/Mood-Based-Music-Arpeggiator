@@ -2,7 +2,7 @@
 Request and response schemas for the arpeggio generation API.
 """
 
-from typing import List, Optional
+from typing import Any, Dict, List, Optional
 
 from pydantic import BaseModel, Field, field_validator
 
@@ -79,9 +79,80 @@ class GenerateArpeggioRequest(BaseModel):
             "Omit to let the model choose based on mood."
         ),
     )
+    bars: int = Field(
+        1,
+        ge=1,
+        le=8,
+        description=(
+            "Number of times to repeat the generated pattern (1–8). "
+            "The note sequence is tiled end-to-end so the MIDI contains "
+            "bars × note_count notes total."
+        ),
+    )
     seed: Optional[int] = Field(
         None,
         description="Optional random seed for reproducible output",
+    )
+
+    # ---- Per-request sampling overrides ---------------------------------
+    # All optional: omit to use the server-configured defaults.
+
+    temperature: Optional[float] = Field(
+        None,
+        ge=0.01,
+        le=2.0,
+        description=(
+            "Sampling temperature (0.01–2.0). "
+            "Lower values produce more conservative, repetitive output; "
+            "higher values produce more varied and surprising sequences. "
+            "Omit to use the server default (0.95)."
+        ),
+    )
+    top_k: Optional[int] = Field(
+        None,
+        ge=0,
+        le=200,
+        description=(
+            "Top-k filtering: at each step keep only the k most likely tokens "
+            "before sampling (0 = disabled). "
+            "Lower values increase focus; 0 gives pure temperature sampling. "
+            "Omit to use the server default (50)."
+        ),
+    )
+    top_p: Optional[float] = Field(
+        None,
+        gt=0.0,
+        le=1.0,
+        description=(
+            "Nucleus (top-p) sampling threshold (0 < top_p ≤ 1.0). "
+            "Keeps the smallest set of tokens whose cumulative probability "
+            "reaches top_p. 1.0 disables nucleus filtering. "
+            "Can be combined with top_k. "
+            "Omit to use the server default (1.0 = disabled)."
+        ),
+    )
+    repetition_penalty: Optional[float] = Field(
+        None,
+        ge=1.0,
+        le=5.0,
+        description=(
+            "Pitch repetition penalty (≥ 1.0). Applied only to PITCH tokens "
+            "that have appeared in the recent context window. "
+            "1.0 disables; 1.1–1.3 is a mild nudge toward variety; "
+            ">2.0 is very aggressive. "
+            "Omit to use the server default (1.0 = off)."
+        ),
+    )
+    max_length: Optional[int] = Field(
+        None,
+        ge=16,
+        le=4096,
+        description=(
+            "Maximum number of new tokens the model may generate for this "
+            "request (16–4096). The effective budget is at least "
+            "note_count × 8 regardless of this value. "
+            "Omit to use the server default (1024)."
+        ),
     )
 
     @field_validator("key")
@@ -129,6 +200,22 @@ class NoteEvent(BaseModel):
     duration: float = Field(..., gt=0.0, description="Duration in beats")
 
 
+class SamplingParams(BaseModel):
+    """
+    Sampling hyperparameters actually used for a generation call.
+
+    Echoed back in every response so clients can see the resolved values
+    when they omitted fields (and the server default was applied) and so
+    results can be exactly reproduced by passing these values back.
+    """
+
+    temperature: float = Field(..., description="Temperature used")
+    top_k: int = Field(..., description="Top-k filter width used (0 = disabled)")
+    top_p: float = Field(..., description="Nucleus threshold used (1.0 = disabled)")
+    repetition_penalty: float = Field(..., description="Pitch repetition penalty used")
+    max_length: int = Field(..., description="Token budget used for this request")
+
+
 class GenerateArpeggioResponse(BaseModel):
     """Response payload from POST /generate-arpeggio."""
 
@@ -146,3 +233,17 @@ class GenerateArpeggioResponse(BaseModel):
     mood: str = Field(..., description="Mood text as supplied in the request")
     note_count: int = Field(..., description="Number of notes in the output")
     duration_seconds: float = Field(..., description="Total playback duration in seconds")
+    sampling: SamplingParams = Field(
+        ...,
+        description="Resolved sampling hyperparameters used for this generation",
+    )
+    alignment_score: Optional[float] = Field(
+        None,
+        ge=0.0,
+        le=1.0,
+        description=(
+            "Mood-alignment probability [0–1] from the classifier head, or null "
+            "when the classifier checkpoint is not loaded.  Reflects the best "
+            "score achieved across all regeneration attempts."
+        ),
+    )
