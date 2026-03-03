@@ -29,8 +29,8 @@ export default function ArpeggiatorLanding() {
   return (
     <div className="landing-page">
       <style>{`
-        @import url('https://fonts.googleapis.com/css2?family=Exo+2:wght@700;800;900&family=DM+Sans:wght@400;500;600&display=swap');
-        
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Exo+2:wght@700;800;900&display=swap');
+
         * {
           margin: 0;
           padding: 0;
@@ -42,9 +42,9 @@ export default function ArpeggiatorLanding() {
         }
 
         .landing-page {
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Inter', sans-serif;
           color: #ffffff;
-          background: linear-gradient(180deg, #0a0e27 0%, #1a1048 50%, #2d1b3d 100%);
+          background: #0e1225;
           min-height: 100vh;
           position: relative;
           overflow-x: hidden;
@@ -57,9 +57,9 @@ export default function ArpeggiatorLanding() {
           left: 0;
           right: 0;
           bottom: 0;
-          background: 
-            radial-gradient(circle at 20% 50%, rgba(138, 43, 226, 0.15) 0%, transparent 50%),
-            radial-gradient(circle at 80% 80%, rgba(255, 107, 0, 0.1) 0%, transparent 50%);
+          background:
+            radial-gradient(ellipse 60% 50% at 10% 20%, rgba(138, 43, 226, 0.12) 0%, transparent 60%),
+            radial-gradient(ellipse 50% 60% at 90% 80%, rgba(255, 107, 0, 0.08) 0%, transparent 60%);
           pointer-events: none;
           z-index: 0;
         }
@@ -160,16 +160,33 @@ export default function ArpeggiatorLanding() {
         .arpeggiator-demo {
           max-width: 900px;
           margin: 60px auto;
-          background: rgba(15, 15, 35, 0.6);
-          backdrop-filter: blur(20px);
-          border-radius: 24px;
+          background: rgba(12, 15, 30, 0.75);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          border-radius: 20px;
           padding: 40px;
-          border: 1px solid rgba(255, 255, 255, 0.05);
-          box-shadow: 
-            0 20px 60px rgba(0, 0, 0, 0.5),
-            inset 0 1px 0 rgba(255, 255, 255, 0.05);
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          box-shadow:
+            0 0 0 1px rgba(255, 107, 0, 0.04),
+            0 24px 64px rgba(0, 0, 0, 0.6);
           opacity: 0;
           animation: fadeInScale 1s ease 0.4s forwards;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .arpeggiator-demo::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 15%;
+          right: 15%;
+          height: 1px;
+          background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 107, 0, 0.7),
+            rgba(138, 43, 226, 0.5),
+            transparent);
         }
 
         .note-grid {
@@ -189,7 +206,7 @@ export default function ArpeggiatorLanding() {
           font-weight: 600;
           cursor: pointer;
           transition: all 0.3s ease;
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Inter', sans-serif;
         }
 
         .note-button:hover {
@@ -231,7 +248,7 @@ export default function ArpeggiatorLanding() {
           padding: 12px 16px;
           color: #ffffff;
           font-size: 14px;
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Inter', sans-serif;
           transition: all 0.3s ease;
         }
 
@@ -261,7 +278,7 @@ export default function ArpeggiatorLanding() {
           align-items: center;
           justify-content: center;
           gap: 10px;
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Inter', sans-serif;
           box-shadow: 0 8px 30px rgba(255, 107, 0, 0.3);
         }
 
@@ -309,7 +326,7 @@ export default function ArpeggiatorLanding() {
           align-items: center;
           justify-content: center;
           gap: 8px;
-          font-family: 'DM Sans', sans-serif;
+          font-family: 'Inter', sans-serif;
         }
 
         .action-btn:hover {
@@ -318,26 +335,28 @@ export default function ArpeggiatorLanding() {
         }
 
         .cta-button {
-          background: #2563eb;
+          background: linear-gradient(135deg, #ff6b00, #ff8c3a);
           border: none;
           border-radius: 12px;
           padding: 16px 40px;
           color: #ffffff;
-          font-size: 16px;
-          font-weight: 700;
+          font-size: 15px;
+          font-weight: 600;
           cursor: pointer;
-          transition: all 0.3s ease;
+          transition: all 0.2s ease;
           margin-top: 40px;
           display: inline-flex;
           align-items: center;
           gap: 10px;
-          font-family: 'DM Sans', sans-serif;
-          box-shadow: 0 8px 30px rgba(37, 99, 235, 0.3);
+          font-family: 'Inter', sans-serif;
+          box-shadow: 0 8px 30px rgba(255, 107, 0, 0.28);
+          text-decoration: none;
         }
 
         .cta-button:hover {
+          opacity: 0.92;
           transform: translateY(-2px);
-          box-shadow: 0 12px 40px rgba(37, 99, 235, 0.5);
+          box-shadow: 0 12px 40px rgba(255, 107, 0, 0.4);
         }
 
         /* Features Section */
@@ -364,9 +383,10 @@ export default function ArpeggiatorLanding() {
         }
 
         .feature-card {
-          background: rgba(15, 15, 35, 0.5);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(12, 15, 30, 0.75);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          border: 1px solid rgba(255, 255, 255, 0.07);
           border-radius: 20px;
           padding: 40px;
           transition: all 0.4s ease;
@@ -378,22 +398,20 @@ export default function ArpeggiatorLanding() {
           content: '';
           position: absolute;
           top: 0;
-          left: 0;
-          right: 0;
-          height: 3px;
-          background: linear-gradient(90deg, #ff6b00, #ff8c3a);
-          opacity: 0;
-          transition: opacity 0.4s ease;
+          left: 15%;
+          right: 15%;
+          height: 1px;
+          background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 107, 0, 0.7),
+            rgba(138, 43, 226, 0.5),
+            transparent);
         }
 
         .feature-card:hover {
           transform: translateY(-8px);
-          border-color: rgba(255, 107, 0, 0.3);
-          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
-        }
-
-        .feature-card:hover::before {
-          opacity: 1;
+          border-color: rgba(255, 107, 0, 0.25);
+          box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
         }
 
         .feature-card.large {
@@ -489,9 +507,10 @@ export default function ArpeggiatorLanding() {
         }
 
         .experience-visual {
-          background: rgba(15, 15, 35, 0.5);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(12, 15, 30, 0.75);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          border: 1px solid rgba(255, 255, 255, 0.07);
           border-radius: 20px;
           padding: 60px;
           min-height: 400px;
@@ -499,6 +518,22 @@ export default function ArpeggiatorLanding() {
           flex-direction: column;
           justify-content: center;
           gap: 20px;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .experience-visual::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 15%;
+          right: 15%;
+          height: 1px;
+          background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 107, 0, 0.7),
+            rgba(138, 43, 226, 0.5),
+            transparent);
         }
 
         .analysis-card {
@@ -548,14 +583,31 @@ export default function ArpeggiatorLanding() {
         }
 
         .founder-card {
-          background: rgba(15, 15, 35, 0.5);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.08);
+          background: rgba(12, 15, 30, 0.75);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          border: 1px solid rgba(255, 255, 255, 0.07);
           border-radius: 20px;
           padding: 40px;
           display: flex;
           gap: 24px;
           align-items: center;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .founder-card::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 15%;
+          right: 15%;
+          height: 1px;
+          background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 107, 0, 0.7),
+            rgba(138, 43, 226, 0.5),
+            transparent);
         }
 
         .founder-image {
@@ -652,12 +704,29 @@ export default function ArpeggiatorLanding() {
         .testimonial {
           max-width: 1000px;
           margin: 0 auto;
-          background: rgba(15, 15, 35, 0.5);
-          backdrop-filter: blur(20px);
-          border: 1px solid rgba(255, 255, 255, 0.08);
-          border-radius: 24px;
+          background: rgba(12, 15, 30, 0.75);
+          backdrop-filter: blur(24px);
+          -webkit-backdrop-filter: blur(24px);
+          border: 1px solid rgba(255, 255, 255, 0.07);
+          border-radius: 20px;
           padding: 60px;
           text-align: center;
+          position: relative;
+          overflow: hidden;
+        }
+
+        .testimonial::before {
+          content: '';
+          position: absolute;
+          top: 0;
+          left: 15%;
+          right: 15%;
+          height: 1px;
+          background: linear-gradient(90deg,
+            transparent,
+            rgba(255, 107, 0, 0.7),
+            rgba(138, 43, 226, 0.5),
+            transparent);
         }
 
         .testimonial-text {
@@ -823,7 +892,6 @@ export default function ArpeggiatorLanding() {
               arpeggiator.ai
             </div>
             <nav className="nav">
-              <a href="#" className="nav-link">Builder</a>
               <Link to="/login" className="nav-link">Log in</Link>
             </nav>
           </div>

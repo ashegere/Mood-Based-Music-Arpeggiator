@@ -103,16 +103,15 @@ const Signup = () => {
   return (
     <div className="signup-page">
       <div className="signup-container">
-        <div className="signup-header">
-          <Link to="/" className="logo">
-            <div className="logo-icon">
-              <Music size={24} strokeWidth={3} />
-            </div>
-            <span>arpeggiator.ai</span>
-          </Link>
-          <h1>Create Account</h1>
-          <p>Sign up to start creating music with AI</p>
-        </div>
+        <Link to="/" className="signup-logo">
+          <div className="signup-logo-icon">
+            <Music size={17} strokeWidth={3} />
+          </div>
+          arpeggiator.ai
+        </Link>
+
+        <h1 className="signup-heading">Create account</h1>
+        <p className="signup-subheading">Sign up to start creating music with AI</p>
 
         {error && <div className="error-message">{error}</div>}
 

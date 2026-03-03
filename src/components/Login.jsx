@@ -88,16 +88,15 @@ const Login = () => {
   return (
     <div className="login-page">
       <div className="login-container">
-        <div className="login-header">
-          <Link to="/" className="logo">
-            <div className="logo-icon">
-              <Music size={24} strokeWidth={3} />
-            </div>
-            <span>arpeggiator.ai</span>
-          </Link>
-          <h1>Welcome Back</h1>
-          <p>Sign in to your account to continue creating music</p>
-        </div>
+        <Link to="/" className="login-logo">
+          <div className="login-logo-icon">
+            <Music size={17} strokeWidth={3} />
+          </div>
+          arpeggiator.ai
+        </Link>
+
+        <h1 className="login-heading">Welcome back</h1>
+        <p className="login-subheading">Sign in to continue creating music</p>
 
         {error && <div className="error-message">{error}</div>}
 
