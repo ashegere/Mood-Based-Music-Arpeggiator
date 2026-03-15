@@ -4,15 +4,11 @@ CustomTransformerGenerator — mood-conditioned arpeggio backend.
 Encapsulates the complete generation pipeline:
   1. Free-text mood → 0-based label index (vocabulary-matched or
      nearest-neighbour via sentence-transformer embeddings).
-  2. Rule-based base arpeggio generation (deterministic, key/scale aware).
-  3. Serialisation → 411-token MIDI event vocabulary.
-  4. Mood-conditioned transformer inference.
-  5. Token decoding → Note objects; mood-velocity fallback when sparse.
-  6. MIDI file rendering.
+  2. Mood-driven pitch walk (key/scale/register/contour parameters per mood).
+  3. Mood-matched rhythm and velocity applied per note.
+  4. MIDI file rendering.
 
-The class depends only on ``app.model.inference.InferenceEngine`` (unchanged)
-and the music utilities in ``app.music``.  The FastAPI layer sees only the
-``BaseGenerator`` interface.
+The FastAPI layer sees only the ``BaseGenerator`` interface.
 """
 
 from __future__ import annotations
@@ -20,7 +16,7 @@ from __future__ import annotations
 import logging
 import random as _random
 from pathlib import Path
-from typing import Dict, List, NamedTuple, Optional, Tuple, Union
+from typing import Dict, List, NamedTuple, Tuple, Union
 
 from app.generators.base import (
     BaseGenerator,
@@ -28,10 +24,7 @@ from app.generators.base import (
     GenerationResult,
     NoteResult,
 )
-from app.model.inference import InferenceEngine
 from app.music.arpeggio_generator import (
-    Arpeggio,
-    ArpeggioGenerator,
     ArpeggioPattern,
     Note,
     build_scale_pitches,
@@ -56,76 +49,6 @@ _VALID_MOODS: Tuple[str, ...] = (
 )
 
 _MOOD_TO_LABEL: Dict[str, int] = {m: i for i, m in enumerate(_VALID_MOODS)}
-
-
-# ---------------------------------------------------------------------------
-# 411-token MIDI event vocabulary
-# Token order must mirror scripts/tokenize_dataset.py::MIDIVocabulary exactly.
-# ---------------------------------------------------------------------------
-
-_TIME_RESOLUTION_MS: int = 10    # milliseconds per TIME_SHIFT unit
-_MAX_TIME_SHIFT: int     = 100   # max value of a single TIME_SHIFT token
-_NUM_VELOCITY_BINS: int  = 32    # velocity quantisation levels
-
-
-def _build_vocab() -> Tuple[Dict[str, int], Dict[int, str]]:
-    """
-    Build the deterministic 411-token vocabulary used during training.
-
-    Layout:
-      0-3    : PAD, BOS, EOS, UNK
-      4-22   : MOOD_<name>           (19 tokens)
-      23-150 : NOTE_ON_<pitch>       (128 tokens, pitch 0-127)
-      151-278: NOTE_OFF_<pitch>      (128 tokens, pitch 0-127)
-      279-378: TIME_SHIFT_<t>        (100 tokens, t 1-100)
-      379-410: VELOCITY_<v>          (32 tokens, v 1-32)
-    """
-    t2i: Dict[str, int] = {}
-    i2t: Dict[int, str] = {}
-    idx = 0
-
-    for tok in ("PAD", "BOS", "EOS", "UNK"):
-        t2i[tok] = idx
-        i2t[idx] = tok
-        idx += 1
-
-    for mood in _VALID_MOODS:
-        tok = f"MOOD_{mood}"
-        t2i[tok] = idx
-        i2t[idx] = tok
-        idx += 1
-
-    for p in range(128):
-        tok = f"NOTE_ON_{p}"
-        t2i[tok] = idx
-        i2t[idx] = tok
-        idx += 1
-
-    for p in range(128):
-        tok = f"NOTE_OFF_{p}"
-        t2i[tok] = idx
-        i2t[idx] = tok
-        idx += 1
-
-    for ts in range(1, _MAX_TIME_SHIFT + 1):
-        tok = f"TIME_SHIFT_{ts}"
-        t2i[tok] = idx
-        i2t[idx] = tok
-        idx += 1
-
-    for v in range(1, _NUM_VELOCITY_BINS + 1):
-        tok = f"VELOCITY_{v}"
-        t2i[tok] = idx
-        i2t[idx] = tok
-        idx += 1
-
-    return t2i, i2t
-
-
-# Module-level constants (built once at import time)
-_TOKEN_TO_ID, _ID_TO_TOKEN = _build_vocab()
-_BOS_ID = _TOKEN_TO_ID["BOS"]
-_EOS_ID = _TOKEN_TO_ID["EOS"]
 
 
 # ---------------------------------------------------------------------------
@@ -241,25 +164,15 @@ _MOOD_VELOCITY: Dict[int, Tuple[int, int]] = {
 
 class CustomTransformerGenerator(BaseGenerator):
     """
-    Mood-conditioned arpeggio generator backed by a trained transformer model.
+    Mood-conditioned arpeggio generator using a rule-based pitch walk.
 
     Args:
-        checkpoint_path: Path to ``best_model.pt`` or ``final_model.pt``.
-        dataset_path:    Optional path to ``train_dataset.pt`` for vocab and
-                         special-token metadata.  Falls back to hard-coded
-                         defaults when ``None`` or missing.
+        checkpoint_path: Path to the model checkpoint (kept for API compatibility).
     """
 
-    def __init__(
-        self,
-        checkpoint_path: Union[str, Path],
-        dataset_path: Optional[Union[str, Path]] = None,
-    ) -> None:
+    def __init__(self, checkpoint_path: Union[str, Path]) -> None:
         self._checkpoint_path = Path(checkpoint_path)
-        self._dataset_path: Optional[Path] = (
-            Path(dataset_path) if dataset_path is not None else None
-        )
-        self._engine = InferenceEngine()
+        self._loaded = False
 
     # ------------------------------------------------------------------
     # BaseGenerator interface
@@ -271,19 +184,12 @@ class CustomTransformerGenerator(BaseGenerator):
 
     @property
     def is_ready(self) -> bool:
-        return self._engine.is_loaded
+        return self._loaded
 
     def load(self) -> None:
-        """Load checkpoint weights into the inference engine."""
-        self._engine.load(
-            self._checkpoint_path,
-            dataset_path=self._dataset_path,
-        )
-        logger.info(
-            "CustomTransformerGenerator loaded from %s (device=%s)",
-            self._checkpoint_path,
-            self._engine.device,
-        )
+        """Mark the generator as ready."""
+        self._loaded = True
+        logger.info("CustomTransformerGenerator ready | checkpoint=%s", self._checkpoint_path)
 
     def generate(self, request: GenerationRequest) -> GenerationResult:
         """
@@ -483,150 +389,3 @@ class CustomTransformerGenerator(BaseGenerator):
         candidates = _MOOD_PATTERNS.get(mood_label, [ArpeggioPattern.ASCENDING])
         return _random.Random(seed).choice(candidates)
 
-    # ------------------------------------------------------------------
-    # Tokenisation: Arpeggio → MIDI event tokens
-    # ------------------------------------------------------------------
-
-    @staticmethod
-    def _arpeggio_to_tokens(arpeggio: Arpeggio, mood_label: int) -> List[int]:
-        """
-        Serialise an Arpeggio into the 411-token MIDI event vocabulary.
-
-        Sequence format:
-          [BOS] [MOOD_<name>]
-          ([VELOCITY_<v>] [NOTE_ON_<p>] [TIME_SHIFT_<t>]... [NOTE_OFF_<p>])+
-          [EOS]
-        """
-        seconds_per_beat = 60.0 / max(arpeggio.tempo, 1)
-
-        events: List[Tuple] = []
-        for note in arpeggio.notes:
-            t_on  = note.position * seconds_per_beat
-            t_off = (note.position + note.duration) * seconds_per_beat
-            events.append(("note_on",  t_on,  note.pitch, note.velocity))
-            events.append(("note_off", t_off, note.pitch, 0))
-
-        events.sort(key=lambda e: (e[1], e[0] == "note_on"))
-
-        def _time_tokens(delta_s: float) -> List[int]:
-            units = int(delta_s * 1000) // _TIME_RESOLUTION_MS
-            ids: List[int] = []
-            while units > 0:
-                shift = min(units, _MAX_TIME_SHIFT)
-                ids.append(_TOKEN_TO_ID[f"TIME_SHIFT_{shift}"])
-                units -= shift
-            return ids
-
-        def _vel_bin(v: int) -> int:
-            b = int(max(1, min(127, v)) / 128 * _NUM_VELOCITY_BINS) + 1
-            return min(b, _NUM_VELOCITY_BINS)
-
-        tokens: List[int] = [
-            _BOS_ID,
-            _TOKEN_TO_ID[f"MOOD_{_VALID_MOODS[mood_label]}"],
-        ]
-        current_time     = 0.0
-        current_vel_bin: Optional[int] = None
-
-        for etype, t, pitch, velocity in events:
-            tokens.extend(_time_tokens(t - current_time))
-            current_time = t
-
-            if etype == "note_on":
-                vb = _vel_bin(velocity)
-                if vb != current_vel_bin:
-                    tokens.append(_TOKEN_TO_ID[f"VELOCITY_{vb}"])
-                    current_vel_bin = vb
-                tokens.append(_TOKEN_TO_ID[f"NOTE_ON_{pitch}"])
-            else:
-                tokens.append(_TOKEN_TO_ID[f"NOTE_OFF_{pitch}"])
-
-        tokens.append(_EOS_ID)
-        return tokens
-
-    # ------------------------------------------------------------------
-    # Decoding: MIDI event tokens → Note objects
-    # ------------------------------------------------------------------
-
-    @staticmethod
-    def _tokens_to_notes(token_ids: List[int], tempo: int) -> List[Note]:
-        """
-        Reconstruct Note objects from an output MIDI event token sequence.
-
-        Args:
-            token_ids: Token IDs from the inference engine (BOS/EOS stripped).
-            tempo:     Request tempo — used for seconds→beats conversion.
-        """
-        beats_per_second  = tempo / 60.0
-        current_time_s    = 0.0
-        current_vel_bin   = 16                            # default ~mf
-        active: Dict[int, Tuple[float, int]] = {}         # pitch → (start_s, vel)
-        notes: List[Note] = []
-
-        for tid in token_ids:
-            tok = _ID_TO_TOKEN.get(tid, "")
-
-            if tok.startswith("TIME_SHIFT_"):
-                current_time_s += int(tok[11:]) * _TIME_RESOLUTION_MS / 1000.0
-
-            elif tok.startswith("VELOCITY_"):
-                current_vel_bin = int(tok[9:])
-
-            elif tok.startswith("NOTE_ON_"):
-                pitch    = int(tok[8:])
-                velocity = max(1, min(127, int((current_vel_bin - 1) / _NUM_VELOCITY_BINS * 127) + 1))
-                active[pitch] = (current_time_s, velocity)
-
-            elif tok.startswith("NOTE_OFF_"):
-                pitch = int(tok[9:])
-                if pitch in active:
-                    start_s, vel = active.pop(pitch)
-                    dur_s        = max(0.01, current_time_s - start_s)
-                    notes.append(Note(
-                        pitch=pitch,
-                        duration=max(0.0625, dur_s * beats_per_second),
-                        velocity=vel,
-                        position=start_s * beats_per_second,
-                    ))
-
-        # Close notes that never received NOTE_OFF
-        for pitch, (start_s, vel) in active.items():
-            notes.append(Note(
-                pitch=pitch,
-                duration=0.5,
-                velocity=vel,
-                position=start_s * beats_per_second,
-            ))
-
-        notes.sort(key=lambda n: n.position)
-        return notes
-
-    # ------------------------------------------------------------------
-    # Mood-velocity fallback
-    # ------------------------------------------------------------------
-
-    @staticmethod
-    def _apply_mood_velocity(
-        base_notes: List[Note],
-        mood_label: int,
-        seed: int,
-    ) -> List[Note]:
-        """
-        Re-shape note velocities using mood-specific dynamics.
-
-        Called when the model returns fewer notes than requested so that even
-        the rule-based arpeggio sounds emotionally distinct across moods.
-        """
-        base_vel, variance = _MOOD_VELOCITY.get(mood_label, (75, 15))
-        # Mix seed with mood so identical seeds with different moods still
-        # produce different velocity patterns.
-        rng = _random.Random(seed ^ (mood_label * 0x9E3779B9 & 0x7FFFFFFF))
-        return [
-            Note(
-                pitch=n.pitch,
-                velocity=max(40, min(115, base_vel + rng.randint(-variance, variance))),
-                position=n.position,
-                duration=n.duration,
-            )
-            for n in base_notes
-        ]

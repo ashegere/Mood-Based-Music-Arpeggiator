@@ -58,7 +58,6 @@ from app.api.dependencies import get_generator, set_generator
 from app.config import settings
 from app.database import Base, engine
 from app.generators.base import BaseGenerator
-from app.generators.pretrained_transformer import PretrainedMusicTransformerGenerator
 from app.generators.transformer import CustomTransformerGenerator
 from app.routers import auth, favorites
 # Import models so Base.metadata.create_all picks them up
@@ -77,81 +76,28 @@ logger = logging.getLogger(__name__)
 
 def _build_generator() -> BaseGenerator:
     """
-    Instantiate and load the active generation backend.
+    Instantiate and load the CustomTransformerGenerator.
 
-    Tries ``PretrainedMusicTransformerGenerator`` first.  If that checkpoint
-    is missing or its state-dict is incompatible with the REMI-architecture,
-    falls back to ``CustomTransformerGenerator`` (original 411-token vocab
-    teacher-forcing model) using ``settings.CUSTOM_CHECKPOINT``.
-
-    Both checkpoint paths are resolved relative to ``backend/`` so the same
-    defaults work whether the process is launched from ``backend/`` or from
+    The checkpoint path is resolved relative to ``backend/`` so the same
+    default works whether the process is launched from ``backend/`` or from
     the repository root.
 
     Raises:
-        FileNotFoundError: Neither checkpoint can be found.
-        RuntimeError:      Neither generator could be loaded.
+        FileNotFoundError: Checkpoint not found.
     """
     base_dir = Path(__file__).parent.parent  # …/backend/
-
-    backbone_path   = base_dir / settings.PRETRAINED_CHECKPOINT
-    adapter_path    = base_dir / settings.MOOD_ADAPTER_CHECKPOINT
-    classifier_path = base_dir / settings.MOOD_CLASSIFIER_CHECKPOINT
-
-    if backbone_path.exists():
-        logger.info(
-            "Attempting PretrainedMusicTransformerGenerator | "
-            "backbone=%s  adapter=%s  classifier=%s  "
-            "temperature=%.2f  top_k=%d  max_tokens=%d",
-            backbone_path,
-            adapter_path if adapter_path.exists() else "(not found)",
-            classifier_path if classifier_path.exists() else "(not found)",
-            settings.GENERATION_TEMPERATURE,
-            settings.GENERATION_TOP_K,
-            settings.GENERATION_MAX_GEN_TOKENS,
-        )
-        try:
-            gen = PretrainedMusicTransformerGenerator(
-                checkpoint_path=backbone_path,
-                temperature=settings.GENERATION_TEMPERATURE,
-                top_k=settings.GENERATION_TOP_K,
-                max_gen_tokens=settings.GENERATION_MAX_GEN_TOKENS,
-                mood_adapter_path=adapter_path,
-                classifier_path=classifier_path,
-                alignment_threshold=settings.ALIGNMENT_SCORE_THRESHOLD,
-                alignment_max_attempts=settings.ALIGNMENT_MAX_ATTEMPTS,
-            )
-            gen.load()
-            return gen
-        except Exception as exc:
-            logger.warning(
-                "PretrainedMusicTransformerGenerator failed to load '%s': %s\n"
-                "Falling back to CustomTransformerGenerator.",
-                backbone_path,
-                exc,
-            )
-    else:
-        logger.info(
-            "Pretrained backbone not found at %s — "
-            "skipping PretrainedMusicTransformerGenerator.",
-            backbone_path,
-        )
-
-    # ---- Fallback: CustomTransformerGenerator ----
     custom_path = base_dir / settings.CUSTOM_CHECKPOINT
+
     if not custom_path.exists():
         raise FileNotFoundError(
-            f"No usable checkpoint found.\n"
-            f"  Pretrained path: {backbone_path} (missing or incompatible)\n"
-            f"  Custom path:     {custom_path} (not found)\n"
-            "Place a compatible checkpoint at one of these paths or override "
-            "via PRETRAINED_CHECKPOINT / CUSTOM_CHECKPOINT environment variables."
+            f"Checkpoint not found: {custom_path}\n"
+            "Override via the CUSTOM_CHECKPOINT environment variable."
         )
 
     logger.info("Loading CustomTransformerGenerator | checkpoint=%s", custom_path)
-    gen_custom = CustomTransformerGenerator(checkpoint_path=custom_path)
-    gen_custom.load()
-    return gen_custom
+    gen = CustomTransformerGenerator(checkpoint_path=custom_path)
+    gen.load()
+    return gen
 
 
 # ---------------------------------------------------------------------------
