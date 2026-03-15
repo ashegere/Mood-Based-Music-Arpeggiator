@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&display=swap');
+
+.navbar {
+  width: 100%;
+  padding: 20px 0;
+  background: transparent;
+}
+
+.navbar-container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo — left column */
+.navbar-logo {
+  flex: 1;
+  display: flex;
+  align-items: center;
+}
+
+/* Nav pill — center column */
+.nav-pill {
+  display: flex;
+  align-items: center;
+  background: #0000FF;
+  border-radius: 100px;
+  padding: 8px 8px;
+  gap: 4px;
+  box-shadow: inset 0 0 0 1.5px rgba(255, 255, 255, 0.18);
+}
+
+.nav-pill-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 8px 28px;
+  border-radius: 100px;
+  transition: background 0.15s;
+  white-space: nowrap;
+}
+
+.nav-pill-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Sign in — right column */
+.navbar-actions {
+  flex: 1;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.signin-btn {
+  background: #CCFF00;
+  color: #000000;
+  text-decoration: none;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+  padding: 10px 32px;
+  border-radius: 100px;
+  transition: background 0.15s, transform 0.1s;
+  white-space: nowrap;
+}
+
+.signin-btn:hover {
+  background: #bef000;
+  transform: scale(1.02);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .nav-pill-link {
+    font-size: 13px;
+    padding: 7px 16px;
+  }
+
+  .signin-btn {
+    font-size: 13px;
+    padding: 9px 20px;
+  }
+}

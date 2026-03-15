@@ -60,7 +60,9 @@ from app.database import Base, engine
 from app.generators.base import BaseGenerator
 from app.generators.pretrained_transformer import PretrainedMusicTransformerGenerator
 from app.generators.transformer import CustomTransformerGenerator
-from app.routers import auth
+from app.routers import auth, favorites
+# Import models so Base.metadata.create_all picks them up
+import app.models.saved_midi  # noqa: F401
 
 logging.basicConfig(
     level=logging.INFO,
@@ -223,6 +225,7 @@ app.add_middleware(
 
 app.include_router(auth.router)
 app.include_router(routes.router, prefix="/api")
+app.include_router(favorites.router)
 
 
 # ---------------------------------------------------------------------------

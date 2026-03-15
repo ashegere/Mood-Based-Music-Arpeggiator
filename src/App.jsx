@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ArpeggiatorLanding from './landing-page';
 import Login from './components/Login';
 import Signup from './components/Signup';
-import Home from './components/Home';
+import Build from './components/Build';
+import SavedMidis from './components/SavedMidis';
 
 function App() {
   return (
@@ -12,7 +13,8 @@ function App() {
         <Route path="/" element={<ArpeggiatorLanding />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/home" element={<Home />} />
+        <Route path="/build" element={<Build />} />
+        <Route path="/saved" element={<SavedMidis />} />
       </Routes>
     </Router>
   );

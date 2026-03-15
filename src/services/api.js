@@ -51,3 +51,31 @@ export const getMe = () =>
  */
 export const generateArpeggio = (params) =>
   request('POST', '/generate-arpeggio', params);
+
+export const saveFavorite = (payload) =>
+  request('POST', '/favorites', payload);
+
+export const getFavorites = () =>
+  request('GET', '/favorites');
+
+export const deleteFavorite = (id) =>
+  request('DELETE', `/favorites/${id}`);
+
+/**
+ * Download a saved MIDI file, triggering a browser save-as dialog.
+ * Uses fetch directly so we can attach the auth token and handle binary data.
+ */
+export async function downloadFavorite(id, filename) {
+  const token = localStorage.getItem('token');
+  const res = await fetch(`${BASE}/favorites/${id}/download`, {
+    headers: token ? { Authorization: `Bearer ${token}` } : {},
+  });
+  if (!res.ok) throw new Error(`Download failed (${res.status})`);
+  const blob = await res.blob();
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  a.click();
+  URL.revokeObjectURL(url);
+}

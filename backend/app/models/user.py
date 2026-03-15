@@ -1,6 +1,7 @@
 """SQLAlchemy ORM model for the users table."""
 
 from sqlalchemy import Boolean, Column, DateTime, Integer, String
+from sqlalchemy.orm import relationship
 from sqlalchemy.sql import func
 
 from ..database import Base
@@ -19,3 +20,5 @@ class User(Base):
     is_verified = Column(Boolean, default=False, nullable=False)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     updated_at = Column(DateTime(timezone=True), onupdate=func.now())
+
+    saved_midis = relationship("SavedMidi", back_populates="user", cascade="all, delete-orphan")
